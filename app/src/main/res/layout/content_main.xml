@@ -13,7 +13,248 @@
     tools:showIn="@layout/activity_main">
 
     <TextView
+        android:id="@+id/choseBrandText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!" />
+        android:layout_centerHorizontal="true"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:text="Choose Smartphone Brand" />
+
+
+    <ScrollView
+        android:id="@+id/brandScrollView"
+        android:layout_below="@+id/choseBrandText"
+        android:scrollbars="vertical"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <HorizontalScrollView
+            android:id="@+id/brandHScrollView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:id="@+id/brandLayout"
+                android:layout_gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <Button
+                    android:id="@+id/apple"
+                    android:background="@drawable/apple"
+                    android:layout_marginRight="@dimen/logo_margin"
+                    android:layout_width="@dimen/logo_size"
+                    android:layout_height="@dimen/logo_size" />
+
+                <Button
+                    android:id="@+id/samsung"
+                    android:background="@drawable/samsung"
+                    android:layout_toRightOf="@+id/apple"
+                    android:layout_marginRight="@dimen/logo_margin"
+                    android:layout_width="@dimen/logo_size"
+                    android:layout_height="@dimen/logo_size" />
+
+                <Button
+                    android:id="@+id/motorola"
+                    android:background="@drawable/motorola"
+                    android:layout_toRightOf="@+id/samsung"
+                    android:layout_marginRight="@dimen/logo_margin"
+                    android:layout_width="@dimen/logo_size"
+                    android:layout_height="@dimen/logo_size" />
+
+                <Button
+                    android:id="@+id/lg"
+                    android:background="@drawable/lg"
+                    android:layout_toRightOf="@+id/motorola"
+                    android:layout_width="@dimen/logo_size"
+                    android:layout_height="@dimen/logo_size" />
+
+                <Button
+                    android:id="@+id/sony"
+                    android:background="@drawable/sony"
+                    android:layout_below="@+id/apple"
+                    android:layout_marginTop="@dimen/logo_margin"
+                    android:layout_width="@dimen/logo_size"
+                    android:layout_height="@dimen/logo_size" />
+
+                <Button
+                    android:id="@+id/lenovo"
+                    android:background="@drawable/lenovo"
+                    android:layout_below="@+id/samsung"
+                    android:layout_toRightOf="@+id/sony"
+                    android:layout_marginTop="@dimen/logo_margin"
+                    android:layout_marginLeft="@dimen/logo_margin"
+                    android:layout_width="@dimen/logo_size"
+                    android:layout_height="@dimen/logo_size" />
+
+
+                <Button
+                    android:id="@+id/oneplus"
+                    android:background="@drawable/oneplus"
+                    android:layout_below="@+id/motorola"
+                    android:layout_toRightOf="@+id/lenovo"
+                    android:layout_marginTop="@dimen/logo_margin"
+                    android:layout_marginLeft="@dimen/logo_margin"
+                    android:layout_width="@dimen/logo_size"
+                    android:layout_height="@dimen/logo_size" />
+
+
+                <Button
+                    android:id="@+id/mi"
+                    android:background="@drawable/mi"
+                    android:layout_below="@+id/lg"
+                    android:layout_toRightOf="@+id/oneplus"
+                    android:layout_marginTop="@dimen/logo_margin"
+                    android:layout_marginLeft="@dimen/logo_margin"
+                    android:layout_width="@dimen/logo_size"
+                    android:layout_height="@dimen/logo_size" />
+
+
+                <Button
+                    android:id="@+id/nexus"
+                    android:background="@drawable/nexus"
+                    android:layout_below="@+id/sony"
+                    android:layout_marginTop="@dimen/logo_margin"
+                    android:layout_width="@dimen/logo_size"
+                    android:layout_height="@dimen/logo_size" />
+
+                <Button
+                    android:id="@+id/htc"
+                    android:background="@drawable/htc"
+                    android:layout_below="@+id/lenovo"
+                    android:layout_toRightOf="@+id/nexus"
+                    android:layout_marginTop="@dimen/logo_margin"
+                    android:layout_marginLeft="@dimen/logo_margin"
+                    android:layout_width="@dimen/logo_size"
+                    android:layout_height="@dimen/logo_size" />
+
+
+                <Button
+                    android:id="@+id/asus"
+                    android:background="@drawable/asus"
+                    android:layout_below="@+id/oneplus"
+                    android:layout_toRightOf="@+id/htc"
+                    android:layout_marginTop="@dimen/logo_margin"
+                    android:layout_marginLeft="@dimen/logo_margin"
+                    android:layout_width="@dimen/logo_size"
+                    android:layout_height="@dimen/logo_size" />
+
+
+                <Button
+                    android:id="@+id/huawei"
+                    android:background="@drawable/huawei"
+                    android:layout_below="@+id/mi"
+                    android:layout_toRightOf="@+id/asus"
+                    android:layout_marginTop="@dimen/logo_margin"
+                    android:layout_marginLeft="@dimen/logo_margin"
+                    android:layout_width="@dimen/logo_size"
+                    android:layout_height="@dimen/logo_size" />
+
+
+                <Button
+                    android:id="@+id/oppo"
+                    android:background="@drawable/oppo"
+                    android:layout_below="@+id/nexus"
+                    android:layout_marginTop="@dimen/logo_margin"
+                    android:layout_width="@dimen/logo_size"
+                    android:layout_height="@dimen/logo_size" />
+
+
+                <Button
+                    android:id="@+id/lumia"
+                    android:background="@drawable/lumia"
+                    android:layout_below="@+id/htc"
+                    android:layout_toRightOf="@+id/oppo"
+                    android:layout_marginTop="@dimen/logo_margin"
+                    android:layout_marginLeft="@dimen/logo_margin"
+                    android:layout_width="@dimen/logo_size"
+                    android:layout_height="@dimen/logo_size" />
+
+
+
+                <Button
+                    android:id="@+id/micromax"
+                    android:background="@drawable/micromax"
+                    android:layout_below="@+id/asus"
+                    android:layout_toRightOf="@+id/lumia"
+                    android:layout_marginTop="@dimen/logo_margin"
+                    android:layout_marginLeft="@dimen/logo_margin"
+                    android:layout_width="@dimen/logo_size"
+                    android:layout_height="@dimen/logo_size" />
+
+
+                <Button
+                    android:id="@+id/yu"
+                    android:background="@drawable/yu"
+                    android:layout_below="@+id/huawei"
+                    android:layout_toRightOf="@+id/micromax"
+                    android:layout_marginTop="@dimen/logo_margin"
+                    android:layout_marginLeft="@dimen/logo_margin"
+                    android:layout_width="@dimen/logo_size"
+                    android:layout_height="@dimen/logo_size" />
+
+
+                <Button
+                    android:id="@+id/gionee"
+                    android:layout_below="@id/oppo"
+                    android:background="@drawable/gionee"
+                    android:layout_marginTop="@dimen/logo_margin"
+                    android:layout_width="@dimen/logo_size"
+                    android:layout_height="@dimen/logo_size" />
+
+
+                <Button
+                    android:id="@+id/panasonic"
+                    android:background="@drawable/panasonic"
+                    android:layout_below="@+id/lumia"
+                    android:layout_toRightOf="@+id/gionee"
+                    android:layout_marginTop="@dimen/logo_margin"
+                    android:layout_marginLeft="@dimen/logo_margin"
+                    android:layout_width="@dimen/logo_size"
+                    android:layout_height="@dimen/logo_size" />
+
+
+                <Button
+                    android:id="@+id/karbonn"
+                    android:background="@drawable/karbonn"
+                    android:layout_below="@+id/micromax"
+                    android:layout_toRightOf="@+id/panasonic"
+                    android:layout_marginTop="@dimen/logo_margin"
+                    android:layout_marginLeft="@dimen/logo_margin"
+                    android:layout_width="@dimen/logo_size"
+                    android:layout_height="@dimen/logo_size" />
+
+
+
+                <Button
+                    android:id="@+id/lava"
+                    android:background="@drawable/lava"
+                    android:layout_below="@+id/yu"
+                    android:layout_toRightOf="@+id/karbonn"
+                    android:layout_marginTop="@dimen/logo_margin"
+                    android:layout_marginLeft="@dimen/logo_margin"
+                    android:layout_width="@dimen/logo_size"
+                    android:layout_height="@dimen/logo_size" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+            </RelativeLayout>
+
+        </HorizontalScrollView>
+
+    </ScrollView>
+
+
 </RelativeLayout>

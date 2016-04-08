@@ -18,6 +18,33 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".Apple"
+            android:label="@string/title_activity_apple"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.jamm.devicespecsandreviews.MainActivity" />
+        </activity>
+        <activity
+            android:name=".Samsung"
+            android:label="@string/title_activity_samsung"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.jamm.devicespecsandreviews.MainActivity" />
+        </activity>
+        <activity
+            android:name=".Motorola"
+            android:label="@string/title_activity_motorola"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.jamm.devicespecsandreviews.MainActivity" />
+        </activity>
     </application>
 
 </manifest>

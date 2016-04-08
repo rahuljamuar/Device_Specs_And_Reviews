@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">Device Specs And Reviews</string>
     <string name="action_settings">Settings</string>
+    <string name="title_activity_apple">Apple</string>
+    <string name="title_activity_samsung">Samsung</string>
+    <string name="title_activity_motorola">Motorola</string>
 </resources>
