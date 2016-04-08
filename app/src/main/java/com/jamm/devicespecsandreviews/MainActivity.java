@@ -1,5 +1,7 @@
 package com.jamm.devicespecsandreviews;
 
+import android.content.Intent;
+import android.graphics.Path;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -45,6 +47,7 @@ public class MainActivity extends AppCompatActivity {
         apple.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this,Apple.class));
 
             }
         });
@@ -52,6 +55,7 @@ public class MainActivity extends AppCompatActivity {
         samsung.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this,Samsung.class));
 
             }
         });
@@ -59,6 +63,7 @@ public class MainActivity extends AppCompatActivity {
         motorola.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this,Motorola.class));
 
             }
         });
@@ -66,6 +71,7 @@ public class MainActivity extends AppCompatActivity {
         lg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this,Lg.class));
 
             }
         });
@@ -73,6 +79,7 @@ public class MainActivity extends AppCompatActivity {
         sony.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this,Sony.class));
 
             }
         });
@@ -80,6 +87,7 @@ public class MainActivity extends AppCompatActivity {
         lenovo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this,Lenovo.class));
 
             }
         });
@@ -87,6 +95,7 @@ public class MainActivity extends AppCompatActivity {
         oneplus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this,Oneplus.class));
 
             }
         });
@@ -94,6 +103,7 @@ public class MainActivity extends AppCompatActivity {
         mi.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this,Mi.class));
 
             }
         });
@@ -101,6 +111,7 @@ public class MainActivity extends AppCompatActivity {
         nexus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this,Nexus.class));
 
             }
         });
@@ -108,6 +119,7 @@ public class MainActivity extends AppCompatActivity {
         htc.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this,Htc.class));
 
             }
         });
@@ -115,6 +127,7 @@ public class MainActivity extends AppCompatActivity {
         asus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this,Asus.class));
 
             }
         });
@@ -122,6 +135,7 @@ public class MainActivity extends AppCompatActivity {
         huawei.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this,Huawei.class));
 
             }
         });
@@ -129,6 +143,7 @@ public class MainActivity extends AppCompatActivity {
         oppo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this,Oppo.class));
 
             }
         });
@@ -136,6 +151,7 @@ public class MainActivity extends AppCompatActivity {
         lumia.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this,Lumia.class));
 
             }
         });
@@ -143,6 +159,7 @@ public class MainActivity extends AppCompatActivity {
         micromax.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this,Micromax.class));
 
             }
         });
@@ -150,6 +167,7 @@ public class MainActivity extends AppCompatActivity {
         yu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this,Yu.class));
 
             }
         });
@@ -157,6 +175,7 @@ public class MainActivity extends AppCompatActivity {
         gionee.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this,Gionee.class));
 
             }
         });
@@ -164,6 +183,7 @@ public class MainActivity extends AppCompatActivity {
         panasonic.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this,Panasonic.class));
 
             }
         });
@@ -171,6 +191,7 @@ public class MainActivity extends AppCompatActivity {
         karbonn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this,Karbonn.class));
 
             }
         });
@@ -178,6 +199,7 @@ public class MainActivity extends AppCompatActivity {
         lava.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this,Lava.class));
 
             }
         });

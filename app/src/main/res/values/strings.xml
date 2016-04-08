@@ -4,4 +4,21 @@
     <string name="title_activity_apple">Apple</string>
     <string name="title_activity_samsung">Samsung</string>
     <string name="title_activity_motorola">Motorola</string>
+    <string name="title_activity_lg">Lg</string>
+    <string name="title_activity_sony">Sony</string>
+    <string name="title_activity_lenovo">Lenovo</string>
+    <string name="title_activity_oneplus">Oneplus</string>
+    <string name="title_activity_mi">Mi</string>
+    <string name="title_activity_nexus">Nexus</string>
+    <string name="title_activity_htc">Htc</string>
+    <string name="title_activity_asus">Asus</string>
+    <string name="title_activity_huawei">Huawei</string>
+    <string name="title_activity_oppo">Oppo</string>
+    <string name="title_activity_lumia">Lumia</string>
+    <string name="title_activity_micromax">Micromax</string>
+    <string name="title_activity_yu">Yu</string>
+    <string name="title_activity_gionee">Gionee</string>
+    <string name="title_activity_panasonic">Panasonic</string>
+    <string name="title_activity_karbonn">Karbonn</string>
+    <string name="title_activity_lava">Lava</string>
 </resources>
