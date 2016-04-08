@@ -21,4 +21,8 @@
     <string name="title_activity_panasonic">Panasonic</string>
     <string name="title_activity_karbonn">Karbonn</string>
     <string name="title_activity_lava">Lava</string>
+    <string name="choose_model">Choose Model</string>
+    <string name="technical_specification">Technical Specification</string>
+    <string name="network">Network</string>
+    <string name="display">Display</string>
 </resources>

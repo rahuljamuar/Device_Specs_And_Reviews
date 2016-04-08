@@ -12,4 +12,6 @@
     tools:context="com.jamm.devicespecsandreviews.Motorola"
     tools:showIn="@layout/activity_motorola">
 
+
+
 </RelativeLayout>

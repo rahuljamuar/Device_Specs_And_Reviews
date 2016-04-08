@@ -1,0 +1,86 @@
+package com.jamm.devicespecsandreviews;
+
+import android.os.Environment;
+
+import org.apache.poi.hssf.usermodel.HSSFSheet;
+import org.apache.poi.hssf.usermodel.HSSFWorkbook;
+import org.apache.poi.poifs.filesystem.POIFSFileSystem;
+import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.Row;
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.util.ArrayList;
+
+/**
+ * Created by Rahul on 08-04-2016.
+ */
+public class ReadExcel {
+
+    int rowCount;
+    String cellVal;
+
+    ArrayList<String> listModels = new ArrayList<String>();
+    ArrayList<String> imageLinkList = new ArrayList<String>();
+
+    public ArrayList<String> getListModels() {
+        return listModels;
+    }
+
+    public ArrayList<String> getImageLinkList() {
+        return imageLinkList;
+    }
+
+    public void readModels() {
+
+        try {
+            File SDCardRoot = Environment.getExternalStorageDirectory();
+            File file = new File(SDCardRoot, "/Android/data/com.jamm.devicespecs/deviceInfo.xls");
+            FileInputStream myInput = new FileInputStream(file);
+
+            POIFSFileSystem myFileSystem = new POIFSFileSystem(myInput);
+            HSSFWorkbook myWorkBook = new HSSFWorkbook(myFileSystem);
+            HSSFSheet mySheet = myWorkBook.getSheet("Oneplus");
+
+            rowCount = mySheet.getPhysicalNumberOfRows();
+
+
+
+            for (int k = 0; k < rowCount; k++) {
+                Row row = mySheet.getRow(k);
+                Cell cell = null;
+                cell = row.getCell(0);
+                if (cell != null) {
+                    cell.setCellType(Cell.CELL_TYPE_STRING);
+                    cellVal = cell.toString();
+                    listModels.add(cellVal);
+                } else {
+                    cellVal = "";
+                    listModels.add(cellVal);
+                }
+            }
+
+            for (int k = 0; k < rowCount; k++) {
+                Row row = mySheet.getRow(k);
+                Cell cell = null;
+                cell = row.getCell(1);
+                if (cell != null) {
+                    cell.setCellType(Cell.CELL_TYPE_STRING);
+                    cellVal = cell.toString();
+                    imageLinkList.add(cellVal);
+                } else {
+                    cellVal = "";
+                    imageLinkList.add(cellVal);
+                }
+            }
+
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+
+
+
+    }
+}
