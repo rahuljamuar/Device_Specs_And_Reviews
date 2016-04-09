@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/oneplusLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:foreground="@drawable/dimpopup"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
@@ -12,85 +14,107 @@
     tools:context="com.jamm.devicespecsandreviews.Oneplus"
     tools:showIn="@layout/activity_oneplus">
 
-    <TextView
-        android:id="@+id/oneplusHeadingText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:text="@string/choose_model"
-        android:textSize="18sp" />
-
-    <Spinner
-        android:id="@+id/modelSpinner"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/oneplusHeadingText"
-        android:layout_centerHorizontal="true" />
+        android:layout_height="match_parent">
 
 
-    <com.android.volley.toolbox.NetworkImageView
-        android:id="@+id/modelPhoto"
-        android:layout_below="@+id/modelSpinner"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
-        android:layout_centerHorizontal="true"/>
+        <TextView
+            android:id="@+id/oneplusHeadingText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:text="@string/choose_model"
+            android:textSize="18sp" />
 
-
-    <!--<ImageView
-        android:id="@+id/modelPhoto"
-        android:layout_width="75dp"
-        android:layout_height="75dp"
-        android:layout_below="@+id/modelSpinner"
-        android:layout_centerHorizontal="true" />
--->
-    <TextView
-        android:id="@+id/techSpecs"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/modelPhoto"
-        android:layout_centerHorizontal="true"
-        android:text="@string/technical_specification"
-        android:textColor="@android:color/black"
-        android:textSize="17sp" />
-
-
-
-
-    <ScrollView
-        android:id="@+id/modelDetailsScroll"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/techSpecs"
-        android:layout_marginTop="10dp"
-        android:scrollbarStyle="outsideOverlay">
-
-        <HorizontalScrollView
-            android:id="@+id/modelDetailsHorizontal"
+        <Spinner
+            android:id="@+id/modelSpinner"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/oneplusHeadingText"
+            android:layout_centerHorizontal="true" />
 
-            <RelativeLayout
-                android:id="@+id/detailsLayout"
+
+        <com.android.volley.toolbox.NetworkImageView
+            android:id="@+id/modelPhoto"
+            android:layout_width="100dp"
+            android:layout_height="135dp"
+            android:layout_below="@+id/modelSpinner"
+            android:layout_centerHorizontal="true" />
+
+
+        <TextView
+            android:id="@+id/line1"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_below="@id/modelPhoto"
+            android:layout_marginTop="5dp"
+            android:background="@android:color/holo_blue_light" />
+
+        <TextView
+            android:id="@+id/line2"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_below="@id/line1"
+            android:layout_marginTop="1dp"
+            android:background="@android:color/holo_blue_light" />
+
+
+        <ScrollView
+            android:id="@+id/modelDetailsScroll"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/line2"
+            android:layout_marginTop="10dp"
+            android:scrollbarStyle="outsideOverlay">
+
+            <HorizontalScrollView
+                android:id="@+id/modelDetailsHorizontal"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
-
-                <TextView
-                    android:id="@+id/network"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginRight="10dp"
-                    android:text="@string/network"
-                    android:textColor="@android:color/black"
-                    android:textSize="17sp" />
+                <RelativeLayout
+                    android:id="@+id/detailsLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
 
 
-            </RelativeLayout>
+                    <TextView
+                        android:id="@+id/network"
+                        android:textIsSelectable="true"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="10dp"
+                        android:text="@string/network"
+                        android:textColor="@color/specsHeader"
+                        android:textSize="22sp" />
+
+                    <TextView
+                        android:id="@+id/technology"
+                        android:textIsSelectable="true"
+                        android:layout_below="@+id/network"
+                        android:layout_marginLeft="5dp"
+                        android:textSize="19sp"
+                        android:text="@string/technology"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:id="@+id/technologyValue"
+                        android:textIsSelectable="true"
+                        android:layout_below="@+id/network"
+                        android:textSize="19sp"
+                        android:layout_toRightOf="@+id/technology"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
 
 
-        </HorizontalScrollView>
-
-    </ScrollView>
+                </RelativeLayout>
 
 
-</RelativeLayout>
+            </HorizontalScrollView>
+
+        </ScrollView>
+
+    </RelativeLayout>
+</FrameLayout>

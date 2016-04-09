@@ -22,16 +22,21 @@ public class ReadExcel {
 
     ArrayList<String> listModels = new ArrayList<String>();
     ArrayList<String> imageLinkList = new ArrayList<String>();
+    ArrayList<String> listTechnology = new ArrayList<String>();
 
     public ArrayList<String> getListModels() {
         return listModels;
+    }
+
+    public ArrayList<String> getListTechnology() {
+        return listTechnology;
     }
 
     public ArrayList<String> getImageLinkList() {
         return imageLinkList;
     }
 
-    public void readModels() {
+    public void readModels(String smartPhoneBrand) {
 
         try {
             File SDCardRoot = Environment.getExternalStorageDirectory();
@@ -40,13 +45,13 @@ public class ReadExcel {
 
             POIFSFileSystem myFileSystem = new POIFSFileSystem(myInput);
             HSSFWorkbook myWorkBook = new HSSFWorkbook(myFileSystem);
-            HSSFSheet mySheet = myWorkBook.getSheet("Oneplus");
+            HSSFSheet mySheet = myWorkBook.getSheet(smartPhoneBrand);
 
             rowCount = mySheet.getPhysicalNumberOfRows();
 
 
-
-            for (int k = 0; k < rowCount; k++) {
+            listModels.add("Select Model");
+            for (int k = 1; k < rowCount; k++) {
                 Row row = mySheet.getRow(k);
                 Cell cell = null;
                 cell = row.getCell(0);
@@ -71,6 +76,20 @@ public class ReadExcel {
                 } else {
                     cellVal = "";
                     imageLinkList.add(cellVal);
+                }
+            }
+
+            for (int k = 0; k < rowCount; k++) {
+                Row row = mySheet.getRow(k);
+                Cell cell = null;
+                cell = row.getCell(2);
+                if (cell != null) {
+                    cell.setCellType(Cell.CELL_TYPE_STRING);
+                    cellVal = cell.toString();
+                    listTechnology.add(cellVal);
+                } else {
+                    cellVal = "";
+                    listTechnology.add(cellVal);
                 }
             }
 

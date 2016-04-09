@@ -3,4 +3,6 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+    <color name="spinnerBackground">#9ef5f2</color>
+    <color name="specsHeader">#7e0b0b</color>
 </resources>

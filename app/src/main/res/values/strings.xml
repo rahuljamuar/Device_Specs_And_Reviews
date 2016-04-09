@@ -23,6 +23,8 @@
     <string name="title_activity_lava">Lava</string>
     <string name="choose_model">Choose Model</string>
     <string name="technical_specification">Technical Specification</string>
-    <string name="network">Network</string>
+    <string name="network">NETWORK</string>
     <string name="display">Display</string>
+    <string name="technology">Technology\u0009\u0009\u0009\u0009\u0009-\u0009\u0009\u0009</string>
+    <string name="tab">\u0009</string>
 </resources>
