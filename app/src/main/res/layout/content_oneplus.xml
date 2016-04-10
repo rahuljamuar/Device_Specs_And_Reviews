@@ -6,10 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:foreground="@drawable/dimpopup"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
+    android:padding="@dimen/activity_vertical_margin"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="com.jamm.devicespecsandreviews.Oneplus"
     tools:showIn="@layout/activity_oneplus">
@@ -37,41 +34,30 @@
 
         <com.android.volley.toolbox.NetworkImageView
             android:id="@+id/modelPhoto"
-            android:layout_width="100dp"
-            android:layout_height="135dp"
-            android:layout_below="@+id/modelSpinner"
-            android:layout_centerHorizontal="true" />
+            style="@style/networkImageIcon"
+            android:layout_below="@+id/modelSpinner" />
 
 
         <TextView
             android:id="@+id/line1"
-            android:layout_width="match_parent"
-            android:layout_height="2dp"
+            style="@style/thickLines"
             android:layout_below="@id/modelPhoto"
-            android:layout_marginTop="5dp"
-            android:background="@android:color/holo_blue_light" />
+            android:layout_marginTop="5dp" />
 
         <TextView
             android:id="@+id/line2"
-            android:layout_width="match_parent"
-            android:layout_height="2dp"
+            style="@style/thickLines"
             android:layout_below="@id/line1"
-            android:layout_marginTop="1dp"
-            android:background="@android:color/holo_blue_light" />
+            android:layout_marginTop="1dp" />
 
+        <RelativeLayout
+            style="@style/relativeLayoutScrollView"
+            android:layout_below="@+id/line2">
 
-        <ScrollView
-            android:id="@+id/modelDetailsScroll"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/line2"
-            android:layout_marginTop="10dp"
-            android:scrollbarStyle="outsideOverlay">
+            <ScrollView
+                android:id="@+id/modelDetailsScroll"
+                style="@style/scrollView">
 
-            <HorizontalScrollView
-                android:id="@+id/modelDetailsHorizontal"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
 
                 <RelativeLayout
                     android:id="@+id/detailsLayout"
@@ -80,41 +66,893 @@
 
 
                     <TextView
+                        android:id="@+id/techSpecs"
+                        style="@style/title"
+                        android:onClick="onClickTechSpecs"
+                        android:text="@string/technical_specification" />
+
+                    <TextView
+                        android:id="@+id/thinLine1"
+                        style="@style/thinLines"
+                        android:layout_below="@+id/techSpecs" />
+
+                    <TextView
+                        android:id="@+id/launch"
+                        style="@style/subTitle"
+
+                        android:layout_below="@+id/thinLine1"
+                        android:text="@string/launched" />
+
+                    <HorizontalScrollView
+                        android:id="@+id/contentHV1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/launch">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+
+                            <TextView
+                                android:id="@+id/launchDate"
+                                style="@style/techSpecsTextView"
+
+                                android:text="@string/announced" />
+
+                            <TextView
+                                android:id="@+id/launchDateValue"
+                                style="@style/techSpecsTextView.V"
+                                android:layout_toRightOf="@+id/launchDate" />
+
+
+                        </RelativeLayout>
+
+                    </HorizontalScrollView>
+
+                    <TextView
+                        android:id="@+id/thinLine2"
+                        style="@style/thinLines"
+                        android:layout_below="@+id/contentHV1" />
+
+
+                    <TextView
                         android:id="@+id/network"
-                        android:textIsSelectable="true"
+                        style="@style/subTitle"
+                        android:layout_below="@+id/thinLine2"
+                        android:text="@string/network" />
+
+                    <HorizontalScrollView
+                        android:id="@+id/networkHV"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/network">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+
+                            <TextView
+                                android:id="@+id/technology"
+                                style="@style/techSpecsTextView"
+                                android:text="@string/technology" />
+
+                            <TextView
+                                android:id="@+id/technologyValue"
+                                style="@style/techSpecsTextView.V"
+                                android:layout_toRightOf="@+id/technology" />
+
+                            <TextView
+                                android:id="@+id/twoGBands"
+                                style="@style/techSpecsTextView"
+                                android:layout_below="@+id/technology"
+                                android:text="@string/_2g_bands" />
+
+
+                            <TextView
+                                android:id="@+id/twoGBandsValue"
+                                style="@style/techSpecsTextView.V"
+                                android:layout_below="@+id/technologyValue"
+                                android:layout_toRightOf="@+id/twoGBands" />
+
+
+                            <TextView
+                                android:id="@+id/threeGBands"
+                                style="@style/techSpecsTextView"
+                                android:layout_below="@+id/twoGBandsValue"
+                                android:text="@string/_3g_bands" />
+
+                            <TextView
+                                android:id="@+id/threeGBandsValue"
+                                style="@style/techSpecsTextView.V"
+                                android:layout_below="@+id/twoGBandsValue"
+                                android:layout_toRightOf="@+id/threeGBands" />
+
+                            <TextView
+                                android:id="@+id/fourGBands"
+                                style="@style/techSpecsTextView"
+                                android:layout_below="@+id/threeGBandsValue"
+                                android:text="@string/_4g_bands" />
+
+                            <TextView
+                                android:id="@+id/fourGBandsValue"
+                                style="@style/techSpecsTextView.V"
+                                android:layout_below="@+id/threeGBandsValue"
+                                android:layout_toRightOf="@+id/fourGBands" />
+
+
+                        </RelativeLayout>
+
+                    </HorizontalScrollView>
+
+                    <TextView
+                        android:id="@+id/thinLine3"
+                        style="@style/thinLines"
+                        android:layout_below="@+id/networkHV" />
+
+                    <TextView
+                        android:id="@+id/body"
+                        style="@style/subTitle"
+
+                        android:layout_below="@+id/thinLine3"
+                        android:text="@string/body" />
+
+                    <HorizontalScrollView
+                        android:id="@+id/contentHV2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/body">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+
+                            <TextView
+                                android:id="@+id/dimensions"
+                                style="@style/techSpecsTextView"
+
+                                android:text="@string/dimensions" />
+
+                            <TextView
+                                android:id="@+id/dimensionsValue"
+                                style="@style/techSpecsTextView.V"
+                                android:layout_toRightOf="@+id/dimensions" />
+
+                            <TextView
+                                android:id="@+id/weight"
+                                style="@style/techSpecsTextView"
+                                android:layout_below="@+id/dimensions"
+                                android:text="@string/weight" />
+
+
+                            <TextView
+                                android:id="@+id/weightValue"
+                                style="@style/techSpecsTextView.V"
+                                android:layout_below="@+id/dimensionsValue"
+                                android:layout_toRightOf="@+id/weight" />
+
+
+                            <TextView
+                                android:id="@+id/sim"
+                                style="@style/techSpecsTextView"
+                                android:layout_below="@+id/weightValue"
+                                android:text="@string/sim" />
+
+                            <TextView
+                                android:id="@+id/simValue"
+                                style="@style/techSpecsTextView.V"
+                                android:layout_below="@+id/weightValue"
+                                android:layout_toRightOf="@+id/sim" />
+
+
+                        </RelativeLayout>
+
+                    </HorizontalScrollView>
+
+                    <TextView
+                        android:id="@+id/thinLine4"
+                        style="@style/thinLines"
+                        android:layout_below="@+id/contentHV2" />
+
+
+                    <TextView
+                        android:id="@+id/display"
+                        style="@style/subTitle"
+                        android:layout_below="@+id/thinLine4"
+                        android:text="@string/network" />
+
+                    <HorizontalScrollView
+                        android:id="@+id/displayHV"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/display">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+
+                            <TextView
+                                android:id="@+id/displayType"
+                                style="@style/techSpecsTextView"
+                                android:text="@string/type" />
+
+                            <TextView
+                                android:id="@+id/displayTypeValue"
+                                style="@style/techSpecsTextView.V"
+                                android:layout_toRightOf="@+id/displayType" />
+
+                            <TextView
+                                android:id="@+id/displaySize"
+                                style="@style/techSpecsTextView"
+                                android:layout_below="@+id/displayTypeValue"
+                                android:text="@string/size" />
+
+
+                            <TextView
+                                android:id="@+id/displaySizeValue"
+                                style="@style/techSpecsTextView.V"
+                                android:layout_below="@+id/displayTypeValue"
+                                android:layout_toRightOf="@+id/displaySize" />
+
+
+                            <TextView
+                                android:id="@+id/resolution"
+                                style="@style/techSpecsTextView"
+                                android:layout_below="@+id/displaySizeValue"
+                                android:text="@string/resolution" />
+
+                            <TextView
+                                android:id="@+id/resolutionValue"
+                                style="@style/techSpecsTextView.V"
+                                android:layout_below="@+id/displaySizeValue"
+                                android:layout_toRightOf="@+id/resolution" />
+
+                            <TextView
+                                android:id="@+id/protection"
+                                style="@style/techSpecsTextView"
+                                android:layout_below="@+id/resolutionValue"
+                                android:text="@string/protection" />
+
+                            <TextView
+                                android:id="@+id/protectionValue"
+                                style="@style/techSpecsTextView.V"
+                                android:layout_below="@+id/resolutionValue"
+                                android:layout_toRightOf="@+id/protection" />
+
+
+                        </RelativeLayout>
+
+                    </HorizontalScrollView>
+
+                    <TextView
+                        android:id="@+id/thinLine5"
+                        style="@style/thinLines"
+                        android:layout_below="@+id/displayHV" />
+
+
+                    <TextView
+                        android:id="@+id/platform"
+                        style="@style/subTitle"
+                        android:layout_below="@+id/thinLine5"
+                        android:text="@string/platform" />
+
+                    <HorizontalScrollView
+                        android:id="@+id/platformHV"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/platform">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+
+                            <TextView
+                                android:id="@+id/os"
+                                style="@style/techSpecsTextView"
+                                android:text="@string/os" />
+
+                            <TextView
+                                android:id="@+id/osValue"
+                                style="@style/techSpecsTextView.V"
+                                android:layout_toRightOf="@+id/os" />
+
+                            <TextView
+                                android:id="@+id/chipset"
+                                style="@style/techSpecsTextView"
+                                android:layout_below="@+id/osValue"
+                                android:text="@string/chipset" />
+
+
+                            <TextView
+                                android:id="@+id/chipsetValue"
+                                style="@style/techSpecsTextView.V"
+                                android:layout_below="@+id/osValue"
+                                android:layout_toRightOf="@+id/chipset" />
+
+
+                            <TextView
+                                android:id="@+id/cpu"
+                                style="@style/techSpecsTextView"
+                                android:layout_below="@+id/chipsetValue"
+                                android:text="@string/cpu" />
+
+                            <TextView
+                                android:id="@+id/cpuValue"
+                                style="@style/techSpecsTextView.V"
+                                android:layout_below="@+id/chipsetValue"
+                                android:layout_toRightOf="@+id/cpu" />
+
+                            <TextView
+                                android:id="@+id/gpu"
+                                style="@style/techSpecsTextView"
+                                android:layout_below="@+id/cpuValue"
+                                android:text="@string/gpu" />
+
+                            <TextView
+                                android:id="@+id/gpuValue"
+                                style="@style/techSpecsTextView.V"
+                                android:layout_below="@+id/cpuValue"
+                                android:layout_toRightOf="@+id/gpu" />
+
+
+                        </RelativeLayout>
+
+                    </HorizontalScrollView>
+
+                    <TextView
+                        android:id="@+id/thinLine6"
+                        style="@style/thinLines"
+                        android:layout_below="@+id/platformHV" />
+
+
+                    <TextView
+                        android:id="@+id/memory"
+                        style="@style/subTitle"
+                        android:layout_below="@+id/thinLine6"
+                        android:text="@string/platform" />
+
+                    <HorizontalScrollView
+                        android:id="@+id/memoryHV"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/memory">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+
+                            <TextView
+                                android:id="@+id/cardSlot"
+                                style="@style/techSpecsTextView"
+                                android:text="@string/card_slot" />
+
+                            <TextView
+                                android:id="@+id/cardSlotValue"
+                                style="@style/techSpecsTextView.V"
+                                android:layout_toRightOf="@+id/cardSlot" />
+
+                            <TextView
+                                android:id="@+id/internal"
+                                style="@style/techSpecsTextView"
+                                android:layout_below="@+id/cardSlotValue"
+                                android:text="@string/internal" />
+
+
+                            <TextView
+                                android:id="@+id/internalValue"
+                                style="@style/techSpecsTextView.V"
+                                android:layout_below="@+id/cardSlotValue"
+                                android:layout_toRightOf="@+id/internal" />
+
+
+                            <TextView
+                                android:id="@+id/ram"
+                                style="@style/techSpecsTextView"
+                                android:layout_below="@+id/internalValue"
+                                android:text="@string/ram" />
+
+                            <TextView
+                                android:id="@+id/ramValue"
+                                style="@style/techSpecsTextView.V"
+                                android:layout_below="@+id/internalValue"
+                                android:layout_toRightOf="@+id/ram" />
+
+
+                        </RelativeLayout>
+
+                    </HorizontalScrollView>
+
+                    <TextView
+                        android:id="@+id/thinLine7"
+                        style="@style/thinLines"
+                        android:layout_below="@+id/memoryHV" />
+
+
+                    <TextView
+                        android:id="@+id/camera"
+                        style="@style/subTitle"
+                        android:layout_below="@+id/thinLine7"
+                        android:text="@string/camera" />
+
+                    <HorizontalScrollView
+                        android:id="@+id/cameraHV"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/camera">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+
+                            <TextView
+                                android:id="@+id/primary"
+                                style="@style/techSpecsTextView"
+                                android:text="@string/primary" />
+
+                            <TextView
+                                android:id="@+id/primaryValue"
+                                style="@style/techSpecsTextView.V"
+                                android:layout_toRightOf="@+id/primary" />
+
+                            <TextView
+                                android:id="@+id/primaryFeatures"
+                                style="@style/techSpecsTextView"
+                                android:layout_below="@+id/primaryValue"
+                                android:text="@string/features" />
+
+
+                            <TextView
+                                android:id="@+id/primaryFeaturesValue"
+                                style="@style/techSpecsTextView.V"
+                                android:layout_below="@+id/primaryValue"
+                                android:layout_toRightOf="@+id/primaryFeatures" />
+
+
+                            <TextView
+                                android:id="@+id/secondary"
+                                style="@style/techSpecsTextView"
+                                android:layout_below="@+id/primaryFeaturesValue"
+                                android:text="@string/secondary" />
+
+                            <TextView
+                                android:id="@+id/secondaryValue"
+                                style="@style/techSpecsTextView.V"
+                                android:layout_below="@+id/primaryFeaturesValue"
+                                android:layout_toRightOf="@+id/secondary" />
+
+                            <TextView
+                                android:id="@+id/secondaryFeatures"
+                                style="@style/techSpecsTextView"
+                                android:layout_below="@+id/secondaryValue"
+                                android:text="@string/features" />
+
+                            <TextView
+                                android:id="@+id/secondaryFeaturesValue"
+                                style="@style/techSpecsTextView.V"
+                                android:layout_below="@+id/secondaryValue"
+                                android:layout_toRightOf="@+id/secondaryFeatures" />
+
+
+                            <TextView
+                                android:id="@+id/video"
+                                style="@style/techSpecsTextView"
+                                android:layout_below="@+id/secondaryFeaturesValue"
+                                android:text="@string/video" />
+
+                            <TextView
+                                android:id="@+id/videoValue"
+                                style="@style/techSpecsTextView.V"
+                                android:layout_below="@+id/secondaryFeaturesValue"
+                                android:layout_toRightOf="@+id/video" />
+
+                            <TextView
+                                android:id="@+id/flash"
+                                style="@style/techSpecsTextView"
+                                android:layout_below="@+id/videoValue"
+                                android:text="@string/flash" />
+
+                            <TextView
+                                android:id="@+id/flashValue"
+                                style="@style/techSpecsTextView.V"
+                                android:layout_below="@+id/videoValue"
+                                android:layout_toRightOf="@+id/flash" />
+
+
+                        </RelativeLayout>
+
+                    </HorizontalScrollView>
+
+                    <TextView
+                        android:id="@+id/thinLine8"
+                        style="@style/thinLines"
+                        android:layout_below="@+id/cameraHV" />
+
+
+                    <TextView
+                        android:id="@+id/features"
+                        style="@style/subTitle"
+                        android:layout_below="@+id/thinLine8"
+                        android:text="@string/features_title" />
+
+                    <HorizontalScrollView
+                        android:id="@+id/featuresHV"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/features">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+
+                            <TextView
+                                android:id="@+id/sensors"
+                                style="@style/techSpecsTextView"
+                                android:text="@string/sensors" />
+
+                            <TextView
+                                android:id="@+id/sensorsValue"
+                                style="@style/techSpecsTextView.V"
+                                android:layout_toRightOf="@+id/sensors" />
+
+                            <TextView
+                                android:id="@+id/java"
+                                style="@style/techSpecsTextView"
+                                android:layout_below="@+id/sensorsValue"
+                                android:text="@string/java" />
+
+
+                            <TextView
+                                android:id="@+id/javaValue"
+                                style="@style/techSpecsTextView.V"
+                                android:layout_below="@+id/sensorsValue"
+                                android:layout_toRightOf="@+id/java" />
+
+
+                            <TextView
+                                android:id="@+id/miscFeatures"
+                                style="@style/techSpecsTextView"
+                                android:layout_below="@+id/javaValue"
+                                android:text="@string/misc" />
+
+                            <TextView
+                                android:id="@+id/miscFeaturesValue"
+                                style="@style/techSpecsTextView.V"
+                                android:layout_below="@+id/javaValue"
+                                android:layout_toRightOf="@+id/miscFeatures" />
+
+
+                        </RelativeLayout>
+
+                    </HorizontalScrollView>
+
+                    <TextView
+                        android:id="@+id/thinLine9"
+                        style="@style/thinLines"
+                        android:layout_below="@+id/featuresHV" />
+
+
+                    <TextView
+                        android:id="@+id/battery"
+                        style="@style/subTitle"
+                        android:layout_below="@+id/thinLine9"
+                        android:text="@string/battery" />
+
+                    <HorizontalScrollView
+                        android:id="@+id/batteryHV"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/battery">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+
+                            <TextView
+                                android:id="@+id/batteryType"
+                                style="@style/techSpecsTextView"
+                                android:text="@string/type" />
+
+                            <TextView
+                                android:id="@+id/batteryTypeValue"
+                                style="@style/techSpecsTextView.V"
+                                android:layout_toRightOf="@+id/batteryType" />
+
+                            <TextView
+                                android:id="@+id/capacity"
+                                style="@style/techSpecsTextView"
+                                android:layout_below="@+id/batteryTypeValue"
+                                android:text="@string/capacity" />
+
+
+                            <TextView
+                                android:id="@+id/capacityValue"
+                                style="@style/techSpecsTextView.V"
+                                android:layout_below="@+id/batteryTypeValue"
+                                android:layout_toRightOf="@+id/capacity" />
+
+
+                        </RelativeLayout>
+
+                    </HorizontalScrollView>
+
+                    <TextView
+                        android:id="@+id/thinLine10"
+                        style="@style/thinLines"
+                        android:layout_below="@+id/batteryHV" />
+
+
+                    <TextView
+                        android:id="@+id/sound"
+                        style="@style/subTitle"
+                        android:layout_below="@+id/thinLine10"
+                        android:text="@string/sound" />
+
+                    <HorizontalScrollView
+                        android:id="@+id/soundHV"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/sound">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+
+                            <TextView
+                                android:id="@+id/loudspeaker"
+                                style="@style/techSpecsTextView"
+                                android:text="@string/loudspeaker" />
+
+                            <TextView
+                                android:id="@+id/loudspeakerValue"
+                                style="@style/techSpecsTextView.V"
+                                android:layout_toRightOf="@+id/loudspeaker" />
+
+                            <TextView
+                                android:id="@+id/jack"
+                                style="@style/techSpecsTextView"
+                                android:layout_below="@+id/loudspeakerValue"
+                                android:text="@string/audio_jack" />
+
+
+                            <TextView
+                                android:id="@+id/jackValue"
+                                style="@style/techSpecsTextView.V"
+                                android:layout_below="@+id/loudspeakerValue"
+                                android:layout_toRightOf="@+id/jack" />
+
+
+                        </RelativeLayout>
+
+                    </HorizontalScrollView>
+
+                    <TextView
+                        android:id="@+id/thinLine11"
+                        style="@style/thinLines"
+                        android:layout_below="@+id/soundHV" />
+
+
+                    <TextView
+                        android:id="@+id/communication"
+                        style="@style/subTitle"
+                        android:layout_below="@+id/thinLine11"
+                        android:text="@string/communication" />
+
+                    <HorizontalScrollView
+                        android:id="@+id/communicationHV"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/communication">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+
+                            <TextView
+                                android:id="@+id/wlan"
+                                style="@style/techSpecsTextView"
+                                android:text="@string/wlan" />
+
+                            <TextView
+                                android:id="@+id/wlanValue"
+                                style="@style/techSpecsTextView.V"
+                                android:layout_toRightOf="@+id/wlan" />
+
+                            <TextView
+                                android:id="@+id/bluetooth"
+                                style="@style/techSpecsTextView"
+                                android:layout_below="@+id/wlanValue"
+                                android:text="@string/bluetooth" />
+
+
+                            <TextView
+                                android:id="@+id/bluetoothValue"
+                                style="@style/techSpecsTextView.V"
+                                android:layout_below="@+id/wlanValue"
+                                android:layout_toRightOf="@+id/bluetooth" />
+
+                            <TextView
+                                android:id="@+id/gps"
+                                style="@style/techSpecsTextView"
+                                android:layout_below="@+id/bluetoothValue"
+                                android:text="@string/gps" />
+
+                            <TextView
+                                android:id="@+id/gpsValue"
+                                style="@style/techSpecsTextView.V"
+                                android:layout_below="@+id/bluetoothValue"
+                                android:layout_toRightOf="@+id/gps" />
+
+                            <TextView
+                                android:id="@+id/nfc"
+                                style="@style/techSpecsTextView"
+                                android:layout_below="@+id/gpsValue"
+                                android:text="@string/nfc" />
+
+
+                            <TextView
+                                android:id="@+id/nfcValue"
+                                style="@style/techSpecsTextView.V"
+                                android:layout_below="@+id/gpsValue"
+                                android:layout_toRightOf="@+id/nfc" />
+
+                            <TextView
+                                android:id="@+id/radio"
+                                android:layout_below="@+id/nfcValue"
+                                style="@style/techSpecsTextView"
+                                android:text="@string/radio" />
+
+                            <TextView
+                                android:id="@+id/radioValue"
+                                style="@style/techSpecsTextView.V"
+                                android:layout_below="@+id/nfcValue"
+                                android:layout_toRightOf="@+id/radio" />
+
+                            <TextView
+                                android:id="@+id/usb"
+                                style="@style/techSpecsTextView"
+                                android:layout_below="@+id/radioValue"
+                                android:text="@string/usb" />
+
+
+                            <TextView
+                                android:id="@+id/usbValue"
+                                style="@style/techSpecsTextView.V"
+                                android:layout_below="@+id/radioValue"
+                                android:layout_toRightOf="@+id/usb" />
+
+
+                        </RelativeLayout>
+
+                    </HorizontalScrollView>
+
+                    <TextView
+                        android:id="@+id/thinLine12"
+                        style="@style/thinLines"
+                        android:layout_below="@+id/communicationHV" />
+
+
+
+                    <TextView
+                        android:id="@+id/misc"
+                        style="@style/subTitle"
+                        android:layout_below="@+id/thinLine12"
+                        android:text="Miscellaneous" />
+
+                    <HorizontalScrollView
+                        android:id="@+id/miscHV"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/misc">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+
+                            <TextView
+                                android:id="@+id/colors"
+                                style="@style/techSpecsTextView"
+                                android:text="@string/colors" />
+
+                            <TextView
+                                android:id="@+id/colorsValue"
+                                style="@style/techSpecsTextView.V"
+                                android:layout_toRightOf="@+id/colors" />
+
+                            <TextView
+                                android:id="@+id/sar"
+                                style="@style/techSpecsTextView"
+                                android:layout_below="@+id/colorsValue"
+                                android:text="@string/sar" />
+
+
+                            <TextView
+                                android:id="@+id/sarValue"
+                                style="@style/techSpecsTextView.V"
+                                android:layout_below="@+id/colorsValue"
+                                android:layout_toRightOf="@+id/sar" />
+
+                            <TextView
+                                android:id="@+id/inTheBox"
+                                style="@style/techSpecsTextView"
+                                android:layout_below="@+id/sarValue"
+                                android:text="@string/in_the_box" />
+
+                            <TextView
+                                android:id="@+id/inTheBoxValue"
+                                style="@style/techSpecsTextView.V"
+                                android:layout_below="@+id/sarValue"
+                                android:layout_toRightOf="@+id/inTheBox" />
+
+                            <TextView
+                                android:id="@+id/variant"
+                                style="@style/techSpecsTextView"
+                                android:layout_below="@+id/inTheBoxValue"
+                                android:text="@string/variant" />
+
+
+                            <TextView
+                                android:id="@+id/variantValue"
+                                style="@style/techSpecsTextView.V"
+                                android:layout_below="@+id/inTheBoxValue"
+                                android:layout_toRightOf="@+id/variant" />
+
+                            <TextView
+                                android:id="@+id/modelID"
+                                style="@style/techSpecsTextView"
+                                android:layout_below="@+id/variantValue"
+                                android:text="@string/model_id" />
+
+                            <TextView
+                                android:id="@+id/modelIDValue"
+                                style="@style/techSpecsTextView.V"
+                                android:layout_below="@+id/variantValue"
+                                android:layout_toRightOf="@+id/modelID" />
+
+
+                        </RelativeLayout>
+
+                    </HorizontalScrollView>
+
+                    <TextView
+                        android:id="@+id/thinLine13"
+                        style="@style/thinLines"
+                        android:layout_below="@+id/miscHV" />
+
+
+
+                    <TextView
+                        android:id="@+id/reviews"
+                        style="@style/title"
+                        android:layout_below="@+id/thinLine13"
+                        android:onClick="onClickReviews"
+                        android:text="@string/reviews" />
+
+                    <TextView
+                        android:id="@+id/review1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginRight="10dp"
-                        android:text="@string/network"
-                        android:textColor="@color/specsHeader"
-                        android:textSize="22sp" />
-
-                    <TextView
-                        android:id="@+id/technology"
-                        android:textIsSelectable="true"
-                        android:layout_below="@+id/network"
-                        android:layout_marginLeft="5dp"
-                        android:textSize="19sp"
-                        android:text="@string/technology"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content" />
-
-                    <TextView
-                        android:id="@+id/technologyValue"
-                        android:textIsSelectable="true"
-                        android:layout_below="@+id/network"
-                        android:textSize="19sp"
-                        android:layout_toRightOf="@+id/technology"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content" />
+                        android:layout_below="@+id/reviews"
+                        android:layout_marginTop="10dp"
+                        android:text="Review 1"
+                        android:visibility="gone" />
 
 
                 </RelativeLayout>
 
 
-            </HorizontalScrollView>
-
-        </ScrollView>
+            </ScrollView>
+        </RelativeLayout>
 
     </RelativeLayout>
 </FrameLayout>
