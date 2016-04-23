@@ -1,6 +1,7 @@
 package com.jamm.devicespecsandreviews;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
@@ -23,6 +24,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.HorizontalScrollView;
+import android.widget.ListView;
 import android.widget.PopupWindow;
 import android.widget.RelativeLayout;
 import android.widget.ScrollView;
@@ -43,6 +45,7 @@ import org.apache.poi.hssf.record.formula.functions.T;
 public class Oneplus extends AppCompatActivity {
 
     private Spinner modelSpinner;
+    ArrayList<String> listReviews = new ArrayList<String>();
     ArrayList<String> listModels = new ArrayList<String>();
     ArrayList<String> imageLinkList = new ArrayList<String>();
 
@@ -136,10 +139,10 @@ public class Oneplus extends AppCompatActivity {
             communication,
             wlan, wlanValue, bluetooth, bluetoothValue, gps, gpsValue, nfc, nfcValue, radio, radioValue, usb, usbValue, thinLine12,
             misc,
-            colors, colorsValue, sar, sarValue, inTheBox, inTheBoxValue, variant, variantValue, modelID, modelIDValue, thinLine13,
+            colors, colorsValue, sar, sarValue, inTheBox, inTheBoxValue, variant, variantValue, modelID, modelIDValue, thinLine13;
 
 
-    reviews;
+    ListView reviewsList;
 
 
     @Override
@@ -295,7 +298,7 @@ public class Oneplus extends AppCompatActivity {
         thinLine13 = (TextView) findViewById(R.id.thinLine13);
 
 
-        reviews = (TextView) findViewById(R.id.review1);
+        reviewsList = (ListView) findViewById(R.id.listReviews);
 
 
         modelSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
@@ -313,10 +316,12 @@ public class Oneplus extends AppCompatActivity {
                     techSpecs.setVisibility(View.VISIBLE);
 
 
+
                     reviewsTitle.setVisibility(View.VISIBLE);
                     getImage(imageLinkList.get(position).toString());
 
                     launchDateValue.setText(listLaunchDate.get(position).toString());
+
 
                     technologyValue.setText(listTechnology.get(position).toString());
                     twoGBandValue.setText(listTwoGBand.get(position).toString());
@@ -388,6 +393,7 @@ public class Oneplus extends AppCompatActivity {
                 }
 
 
+
             }
 
             @Override
@@ -396,6 +402,21 @@ public class Oneplus extends AppCompatActivity {
 
             }
         });
+
+        if (line1.getVisibility() == View.GONE) {
+            techSpecs.setText("Technical Specification\t\t\u25BC");
+        }
+        else{
+            techSpecs.setText("Technical Specification\t\t\u25B2");
+        }
+
+        if (line1.getVisibility() == View.GONE) {
+            reviewsTitle.setText("Reviews\t\t\u25BC");
+        }
+        else{
+            reviewsTitle.setText("Reviews\t\t\u25B2");
+        }
+
 
         networkModelImage.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -442,10 +463,22 @@ public class Oneplus extends AppCompatActivity {
             }
         });
 
+        listReviews.add("\n\nKeep scrolling to read all reviews\n\n\n\n\n\n\n\n\n\n\n\n");
+        listReviews.add("Good Phone");
+        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(
+                this,
+                android.R.layout.simple_list_item_1,
+                listReviews );
+
+        reviewsList.setAdapter(arrayAdapter);
+
+
         relativeLayout.getForeground().setAlpha(0);
 
 
     }
+
+
 
 
     @Override
@@ -544,6 +577,8 @@ public class Oneplus extends AppCompatActivity {
 
     public void onClickTechSpecs(View v) {
         if (network.getVisibility() == View.GONE) {
+            techSpecs.setText("Technical Specification\t\t\u25B2");
+
             thinLine1.setVisibility(View.VISIBLE);
             Fx.slide_down(this, thinLine1);
             launch.setVisibility(View.VISIBLE);
@@ -695,6 +730,8 @@ public class Oneplus extends AppCompatActivity {
 
 
         } else {
+            techSpecs.setText("Technical Specification\t\t\u25BC");
+
             Fx.slide_up(this, thinLine1);
             thinLine1.setVisibility(View.GONE);
             Fx.slide_up(this, launch);
@@ -855,15 +892,16 @@ public class Oneplus extends AppCompatActivity {
     }
 
     public void onClickReviews(View v) {
-        if (reviews.getVisibility() == View.GONE) {
-
-            reviews.setVisibility(View.VISIBLE);
-            Fx.slide_down(this, reviews);
+        if (reviewsList.getVisibility() == View.GONE) {
+            reviewsTitle.setText("Reviews\t\t\u25B2");
+            reviewsList.setVisibility(View.VISIBLE);
+            Fx.slide_down(this, reviewsList);
 
 
         } else {
-            Fx.slide_up(this, reviews);
-            reviews.setVisibility(View.GONE);
+            reviewsTitle.setText("Reviews\t\t\u25BC");
+            Fx.slide_up(this, reviewsList);
+            reviewsList.setVisibility(View.GONE);
 
         }
 

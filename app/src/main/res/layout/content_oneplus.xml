@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:foreground="@drawable/dimpopup"
-    android:padding="@dimen/activity_vertical_margin"
+    android:padding="3dp"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="com.jamm.devicespecsandreviews.Oneplus"
     tools:showIn="@layout/activity_oneplus">
@@ -20,15 +20,18 @@
             android:id="@+id/oneplusHeadingText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
+            android:textColor="@android:color/black"
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="8dp"
             android:text="@string/choose_model"
             android:textSize="18sp" />
 
         <Spinner
             android:id="@+id/modelSpinner"
+            android:layout_marginTop="8dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/oneplusHeadingText"
+            android:layout_toRightOf="@+id/oneplusHeadingText"
             android:layout_centerHorizontal="true" />
 
 
@@ -68,8 +71,11 @@
                     <TextView
                         android:id="@+id/techSpecs"
                         style="@style/title"
+                        android:background="#ff4500"
                         android:onClick="onClickTechSpecs"
                         android:text="@string/technical_specification" />
+
+
 
                     <TextView
                         android:id="@+id/thinLine1"
@@ -934,18 +940,21 @@
                     <TextView
                         android:id="@+id/reviews"
                         style="@style/title"
+                        android:background="#0e790c"
                         android:layout_below="@+id/thinLine13"
                         android:onClick="onClickReviews"
                         android:text="@string/reviews" />
 
-                    <TextView
-                        android:id="@+id/review1"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                    <ListView
+
+                        android:id="@+id/listReviews"
                         android:layout_below="@+id/reviews"
-                        android:layout_marginTop="10dp"
-                        android:text="Review 1"
-                        android:visibility="gone" />
+                        android:divider="@android:color/darker_gray"
+                        android:dividerHeight="2dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                    </ListView>
 
 
                 </RelativeLayout>

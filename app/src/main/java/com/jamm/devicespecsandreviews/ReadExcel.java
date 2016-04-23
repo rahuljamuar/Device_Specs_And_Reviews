@@ -20,6 +20,7 @@ public class ReadExcel {
     int rowCount;
     String cellVal;
 
+    ArrayList<String> listReviews = new ArrayList<String>();
     ArrayList<String> listModels = new ArrayList<String>();
     ArrayList<String> imageLinkList = new ArrayList<String>();
     ArrayList<String> listTechnology = new ArrayList<String>();
@@ -79,11 +80,15 @@ public class ReadExcel {
     ArrayList<String> listModelID = new ArrayList<String>();
 
 
+    int modelCount;
 
+    public ArrayList<String> getListReviews() {
+        return listReviews;
+    }
 
-
-
-
+    public int getModelCount() {
+        return modelCount;
+    }
 
     public ArrayList<String> getListModels() {
         return listModels;
@@ -266,6 +271,7 @@ public class ReadExcel {
     }
 
     public void readModels(String smartPhoneBrand) {
+        modelCount = 0;
 
         try {
             File SDCardRoot = Environment.getExternalStorageDirectory();
@@ -284,7 +290,9 @@ public class ReadExcel {
                 Row row = mySheet.getRow(k);
                 Cell cell = null;
                 cell = row.getCell(0);
+                modelCount++;
                 if (cell != null) {
+
                     cell.setCellType(Cell.CELL_TYPE_STRING);
                     cellVal = cell.toString();
                     listModels.add(cellVal);
@@ -910,6 +918,9 @@ public class ReadExcel {
                     listModelID.add(cellVal);
                 }
             }
+
+
+
 
 
 
