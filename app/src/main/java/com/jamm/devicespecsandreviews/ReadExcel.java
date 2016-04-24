@@ -20,7 +20,7 @@ public class ReadExcel {
     int rowCount;
     String cellVal;
 
-    ArrayList<String> listReviews = new ArrayList<String>();
+
     ArrayList<String> listModels = new ArrayList<String>();
     ArrayList<String> imageLinkList = new ArrayList<String>();
     ArrayList<String> listTechnology = new ArrayList<String>();
@@ -79,11 +79,33 @@ public class ReadExcel {
     ArrayList<String> listVariant = new ArrayList<String>();
     ArrayList<String> listModelID = new ArrayList<String>();
 
+    ArrayList<String> listReview1 = new ArrayList<String>();
+    ArrayList<String> listReview2 = new ArrayList<String>();
+    ArrayList<String> listReview3 = new ArrayList<String>();
+    ArrayList<String> listReview4 = new ArrayList<String>();
+    ArrayList<String> listReview5 = new ArrayList<String>();
+
 
     int modelCount;
 
-    public ArrayList<String> getListReviews() {
-        return listReviews;
+    public ArrayList<String> getListReview2() {
+        return listReview2;
+    }
+
+    public ArrayList<String> getListReview3() {
+        return listReview3;
+    }
+
+    public ArrayList<String> getListReview4() {
+        return listReview4;
+    }
+
+    public ArrayList<String> getListReview5() {
+        return listReview5;
+    }
+
+    public ArrayList<String> getListReview1() {
+        return listReview1;
     }
 
     public int getModelCount() {
@@ -916,6 +938,77 @@ public class ReadExcel {
                 } else {
                     cellVal = "";
                     listModelID.add(cellVal);
+                }
+            }
+
+
+            for (int k = 0; k < rowCount; k++) {
+                Row row = mySheet.getRow(k);
+                Cell cell = null;
+                cell = row.getCell(45);
+                if (cell != null) {
+                    cell.setCellType(Cell.CELL_TYPE_STRING);
+                    cellVal = cell.toString();
+                    listReview1.add(cellVal);
+                } else {
+                    cellVal = "";
+                    listReview1.add(cellVal);
+                }
+            }
+
+            for (int k = 0; k < rowCount; k++) {
+                Row row = mySheet.getRow(k);
+                Cell cell = null;
+                cell = row.getCell(46);
+                if (cell != null) {
+                    cell.setCellType(Cell.CELL_TYPE_STRING);
+                    cellVal = cell.toString();
+                    listReview2.add(cellVal);
+                } else {
+                    cellVal = "";
+                    listReview2.add(cellVal);
+                }
+            }
+
+            for (int k = 0; k < rowCount; k++) {
+                Row row = mySheet.getRow(k);
+                Cell cell = null;
+                cell = row.getCell(47);
+                if (cell != null) {
+                    cell.setCellType(Cell.CELL_TYPE_STRING);
+                    cellVal = cell.toString();
+                    listReview3.add(cellVal);
+                } else {
+                    cellVal = "";
+                    listReview3.add(cellVal);
+                }
+            }
+
+            for (int k = 0; k < rowCount; k++) {
+                Row row = mySheet.getRow(k);
+                Cell cell = null;
+                cell = row.getCell(48);
+                if (cell != null) {
+                    cell.setCellType(Cell.CELL_TYPE_STRING);
+                    cellVal = cell.toString();
+                    listReview4.add(cellVal);
+                } else {
+                    cellVal = "";
+                    listReview4.add(cellVal);
+                }
+            }
+
+            for (int k = 0; k < rowCount; k++) {
+                Row row = mySheet.getRow(k);
+                Cell cell = null;
+                cell = row.getCell(49);
+                if (cell != null) {
+                    cell.setCellType(Cell.CELL_TYPE_STRING);
+                    cellVal = cell.toString();
+                    listReview5.add(cellVal);
+                } else {
+                    cellVal = "";
+                    listReview5.add(cellVal);
                 }
             }
 

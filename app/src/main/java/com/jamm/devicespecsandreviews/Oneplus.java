@@ -45,7 +45,7 @@ import org.apache.poi.hssf.record.formula.functions.T;
 public class Oneplus extends AppCompatActivity {
 
     private Spinner modelSpinner;
-    ArrayList<String> listReviews = new ArrayList<String>();
+
     ArrayList<String> listModels = new ArrayList<String>();
     ArrayList<String> imageLinkList = new ArrayList<String>();
 
@@ -104,6 +104,12 @@ public class Oneplus extends AppCompatActivity {
     ArrayList<String> listVariant = new ArrayList<String>();
     ArrayList<String> listModelID = new ArrayList<String>();
 
+    ArrayList<String> listReview1 = new ArrayList<String>();
+    ArrayList<String> listReview2 = new ArrayList<String>();
+    ArrayList<String> listReview3 = new ArrayList<String>();
+    ArrayList<String> listReview4 = new ArrayList<String>();
+    ArrayList<String> listReview5 = new ArrayList<String>();
+
 
     NetworkImageView networkModelImage;
     private PopupWindow popupWindow;
@@ -139,10 +145,11 @@ public class Oneplus extends AppCompatActivity {
             communication,
             wlan, wlanValue, bluetooth, bluetoothValue, gps, gpsValue, nfc, nfcValue, radio, radioValue, usb, usbValue, thinLine12,
             misc,
-            colors, colorsValue, sar, sarValue, inTheBox, inTheBoxValue, variant, variantValue, modelID, modelIDValue, thinLine13;
+            colors, colorsValue, sar, sarValue, inTheBox, inTheBoxValue, variant, variantValue, modelID, modelIDValue, thinLine13,
+            thinLine14,review1,thinLine15,review2,thinLine16,review3,thinLine17,review4,thinLine18,review5,thinLine19;
 
 
-    ListView reviewsList;
+
 
 
     @Override
@@ -297,8 +304,18 @@ public class Oneplus extends AppCompatActivity {
         modelIDValue = (TextView) findViewById(R.id.modelIDValue);
         thinLine13 = (TextView) findViewById(R.id.thinLine13);
 
+        thinLine14 = (TextView) findViewById(R.id.thinLine14);
+        review1 = (TextView) findViewById(R.id.review1);
+        thinLine15 = (TextView) findViewById(R.id.thinLine15);
+        review2 = (TextView) findViewById(R.id.review2);
+        thinLine16 = (TextView) findViewById(R.id.thinLine16);
+        review3 = (TextView) findViewById(R.id.review3);
+        thinLine17 = (TextView) findViewById(R.id.thinLine17);
+        review4 = (TextView) findViewById(R.id.review4);
+        thinLine18 = (TextView) findViewById(R.id.thinLine18);
+        review5 = (TextView) findViewById(R.id.review5);
+        thinLine19 = (TextView) findViewById(R.id.thinLine19);
 
-        reviewsList = (ListView) findViewById(R.id.listReviews);
 
 
         modelSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
@@ -376,6 +393,12 @@ public class Oneplus extends AppCompatActivity {
                     variantValue.setText(listVariant.get(position).toString());
                     modelIDValue.setText(listModelID.get(position).toString());
 
+                    review1.setText(listReview1.get(position).toString());
+                    review2.setText(listReview2.get(position).toString());
+                    review3.setText(listReview3.get(position).toString());
+                    review4.setText(listReview4.get(position).toString());
+                    review5.setText(listReview5.get(position).toString());
+
 
                 } else {
 
@@ -411,10 +434,10 @@ public class Oneplus extends AppCompatActivity {
         }
 
         if (line1.getVisibility() == View.GONE) {
-            reviewsTitle.setText("Reviews\t\t\u25BC");
+            reviewsTitle.setText("Top 5 Reviews\t\t\u25BC");
         }
         else{
-            reviewsTitle.setText("Reviews\t\t\u25B2");
+            reviewsTitle.setText("Top 5 Reviews\t\t\u25B2");
         }
 
 
@@ -463,14 +486,6 @@ public class Oneplus extends AppCompatActivity {
             }
         });
 
-        listReviews.add("\n\nKeep scrolling to read all reviews\n\n\n\n\n\n\n\n\n\n\n\n");
-        listReviews.add("Good Phone");
-        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(
-                this,
-                android.R.layout.simple_list_item_1,
-                listReviews );
-
-        reviewsList.setAdapter(arrayAdapter);
 
 
         relativeLayout.getForeground().setAlpha(0);
@@ -484,7 +499,7 @@ public class Oneplus extends AppCompatActivity {
     @Override
     public void onStart() {
         super.onStart();
-        Log.d("myStatus", "onStart called");
+
 
 
         addItemsOnSpinner();
@@ -554,6 +569,12 @@ public class Oneplus extends AppCompatActivity {
         listInTheBox = readExcel.getListInTheBox();
         listVariant = readExcel.getListVariant();
         listModelID = readExcel.getListModelID();
+
+        listReview1 =readExcel.getListReview1();
+        listReview2 =readExcel.getListReview2();
+        listReview3 =readExcel.getListReview3();
+        listReview4 =readExcel.getListReview4();
+        listReview5 =readExcel.getListReview5();
 
 
         modelSpinner = (Spinner) modelSpinner.findViewById(R.id.modelSpinner);
@@ -892,16 +913,48 @@ public class Oneplus extends AppCompatActivity {
     }
 
     public void onClickReviews(View v) {
-        if (reviewsList.getVisibility() == View.GONE) {
-            reviewsTitle.setText("Reviews\t\t\u25B2");
-            reviewsList.setVisibility(View.VISIBLE);
-            Fx.slide_down(this, reviewsList);
+        if (review1.getVisibility() == View.GONE) {
+            reviewsTitle.setText("Top 5 Reviews\t\t\u25B2");
+
+            review1.setVisibility(View.VISIBLE);
+            Fx.slide_down(this, review1);
+            review2.setVisibility(View.VISIBLE);
+            Fx.slide_down(this, review2);
+            review3.setVisibility(View.VISIBLE);
+            Fx.slide_down(this, review3);
+            review4.setVisibility(View.VISIBLE);
+            Fx.slide_down(this, review4);
+            review5.setVisibility(View.VISIBLE);
+            Fx.slide_down(this, review5);
+            thinLine14.setVisibility(View.VISIBLE);
+            thinLine15.setVisibility(View.VISIBLE);
+            thinLine16.setVisibility(View.VISIBLE);
+            thinLine17.setVisibility(View.VISIBLE);
+            thinLine18.setVisibility(View.VISIBLE);
+            thinLine19.setVisibility(View.VISIBLE);
+
 
 
         } else {
-            reviewsTitle.setText("Reviews\t\t\u25BC");
-            Fx.slide_up(this, reviewsList);
-            reviewsList.setVisibility(View.GONE);
+            reviewsTitle.setText("Top 5 Reviews\t\t\u25BC");
+            Fx.slide_up(this, review1);
+            review1.setVisibility(View.GONE);
+            Fx.slide_up(this, review2);
+            review2.setVisibility(View.GONE);
+            Fx.slide_up(this, review3);
+            review3.setVisibility(View.GONE);
+            Fx.slide_up(this, review4);
+            review4.setVisibility(View.GONE);
+            Fx.slide_up(this, review5);
+            review5.setVisibility(View.GONE);
+            thinLine14.setVisibility(View.GONE);
+            thinLine15.setVisibility(View.GONE);
+            thinLine16.setVisibility(View.GONE);
+            thinLine17.setVisibility(View.GONE);
+            thinLine18.setVisibility(View.GONE);
+            thinLine19.setVisibility(View.GONE);
+
+
 
         }
 
@@ -914,7 +967,7 @@ public class Oneplus extends AppCompatActivity {
         super.onResume();
 
         modelSpinner.setSelection(staticPosition);
-// write code whatever you want to write here
+
     }
 
 

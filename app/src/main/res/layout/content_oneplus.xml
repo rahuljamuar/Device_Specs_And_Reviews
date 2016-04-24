@@ -20,19 +20,19 @@
             android:id="@+id/oneplusHeadingText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@android:color/black"
             android:layout_marginRight="5dp"
             android:layout_marginTop="8dp"
             android:text="@string/choose_model"
+            android:textColor="@android:color/black"
             android:textSize="18sp" />
 
         <Spinner
             android:id="@+id/modelSpinner"
-            android:layout_marginTop="8dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_toRightOf="@+id/oneplusHeadingText"
-            android:layout_centerHorizontal="true" />
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="8dp"
+            android:layout_toRightOf="@+id/oneplusHeadingText" />
 
 
         <com.android.volley.toolbox.NetworkImageView
@@ -74,7 +74,6 @@
                         android:background="#ff4500"
                         android:onClick="onClickTechSpecs"
                         android:text="@string/technical_specification" />
-
 
 
                     <TextView
@@ -813,8 +812,8 @@
 
                             <TextView
                                 android:id="@+id/radio"
-                                android:layout_below="@+id/nfcValue"
                                 style="@style/techSpecsTextView"
+                                android:layout_below="@+id/nfcValue"
                                 android:text="@string/radio" />
 
                             <TextView
@@ -845,7 +844,6 @@
                         android:id="@+id/thinLine12"
                         style="@style/thinLines"
                         android:layout_below="@+id/communicationHV" />
-
 
 
                     <TextView
@@ -936,25 +934,78 @@
                         android:layout_below="@+id/miscHV" />
 
 
-
                     <TextView
                         android:id="@+id/reviews"
                         style="@style/title"
-                        android:background="#0e790c"
                         android:layout_below="@+id/thinLine13"
+                        android:background="#0e790c"
                         android:onClick="onClickReviews"
                         android:text="@string/reviews" />
 
-                    <ListView
+                    <TextView
+                        android:id="@+id/thinLine14"
+                        style="@style/thinLines.reviews"
+                        android:layout_below="@+id/reviews" />
 
-                        android:id="@+id/listReviews"
-                        android:layout_below="@+id/reviews"
-                        android:divider="@android:color/darker_gray"
-                        android:dividerHeight="2dp"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent">
+                    <TextView
+                        android:id="@+id/review1"
+                        style="@style/reviewsStyle"
+                        android:layout_below="@+id/thinLine14">
 
-                    </ListView>
+                    </TextView>
+
+                    <TextView
+                        android:id="@+id/thinLine15"
+                        style="@style/thinLines.reviews"
+                        android:layout_below="@+id/review1" />
+
+                    <TextView
+                        android:id="@+id/review2"
+                        style="@style/reviewsStyle"
+                        android:layout_below="@+id/thinLine15">
+
+                    </TextView>
+
+                    <TextView
+                        android:id="@+id/thinLine16"
+                        style="@style/thinLines.reviews"
+                        android:layout_below="@+id/review2" />
+
+                    <TextView
+                        android:id="@+id/review3"
+                        style="@style/reviewsStyle"
+                        android:layout_below="@+id/thinLine16">
+
+                    </TextView>
+
+                    <TextView
+                        android:id="@+id/thinLine17"
+                        style="@style/thinLines.reviews"
+                        android:layout_below="@+id/review3" />
+
+                    <TextView
+                        android:id="@+id/review4"
+                        style="@style/reviewsStyle"
+                        android:layout_below="@+id/thinLine17">
+
+                    </TextView>
+
+                    <TextView
+                        android:id="@+id/thinLine18"
+                        style="@style/thinLines.reviews"
+                        android:layout_below="@+id/review4" />
+
+                    <TextView
+                        android:id="@+id/review5"
+                        style="@style/reviewsStyle"
+                        android:layout_below="@+id/thinLine18">
+
+                    </TextView>
+
+                    <TextView
+                        android:id="@+id/thinLine19"
+                        style="@style/thinLines.reviews"
+                        android:layout_below="@+id/review5" />
 
 
                 </RelativeLayout>
