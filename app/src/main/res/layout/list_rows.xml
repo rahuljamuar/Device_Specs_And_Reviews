@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+
+    <LinearLayout
+        android:id="@+id/listLayout"
+        android:orientation="vertical"
+        android:padding="3dp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginRight="5dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        
+        <ImageView
+            android:id="@+id/brand_image"
+            android:src="@drawable/oneplus"
+            android:layout_width="@dimen/logo_size"
+            android:layout_height="@dimen/logo_size" />
+
+    </LinearLayout>
+    
+    <TextView
+        android:id="@+id/brand_name"
+        android:text="Brand Name"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="@android:color/black"
+        android:layout_alignTop="@+id/listLayout"
+        android:layout_toRightOf="@+id/listLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/brand_details"
+        android:layout_below="@+id/brand_name"
+        android:layout_toRightOf="@+id/listLayout"
+        android:layout_marginTop="10dp"
+        android:text="Models"
+        android:textSize="15sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+
+
+</RelativeLayout>
