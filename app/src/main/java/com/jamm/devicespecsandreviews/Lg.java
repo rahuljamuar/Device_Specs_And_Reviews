@@ -14,6 +14,8 @@ public class Lg extends AppCompatActivity {
     ArrayList<String> listModels = new ArrayList<String>();
     ArrayList<String> imageLinkList = new ArrayList<String>();
 
+    ArrayList<String> listLaunchDate = new ArrayList<String>();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
