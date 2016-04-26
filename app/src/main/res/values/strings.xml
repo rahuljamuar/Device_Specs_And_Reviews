@@ -78,5 +78,8 @@
     <string name="model_id">Model ID\u0009\u0009\u0009\u0009\u0009\u0009\u0009-\u0009\u0009</string>
     <string name="features_title">Features</string>
     <string name="card_slot">Card Slot\u0009\u0009\u0009\u0009\u0009\u0009-\u0009\u0009</string>
+    <string name="ask_question">Ask Question</string>
+    <string name="ask_inst">Having doubt? Ask anything regarding this phone below:</string>
+    <string name="answered_questions">Answered questions</string>
 
 </resources>
