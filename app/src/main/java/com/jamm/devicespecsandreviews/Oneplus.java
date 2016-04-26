@@ -3,7 +3,9 @@ package com.jamm.devicespecsandreviews;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
+import android.graphics.PorterDuff;
 import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.LayerDrawable;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -22,10 +24,12 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.FrameLayout;
 import android.widget.HorizontalScrollView;
 import android.widget.ListView;
 import android.widget.PopupWindow;
+import android.widget.RatingBar;
 import android.widget.RelativeLayout;
 import android.widget.ScrollView;
 import android.widget.Spinner;
@@ -45,6 +49,8 @@ import org.apache.poi.hssf.record.formula.functions.T;
 public class Oneplus extends AppCompatActivity {
 
     private Spinner modelSpinner;
+
+    RatingBar ratingBarCamera,ratingBarPerformance,ratingBarDesign,ratingBarBattery,ratingBarBuild;
 
     ArrayList<String> listModels = new ArrayList<String>();
     ArrayList<String> imageLinkList = new ArrayList<String>();
@@ -146,7 +152,14 @@ public class Oneplus extends AppCompatActivity {
             wlan, wlanValue, bluetooth, bluetoothValue, gps, gpsValue, nfc, nfcValue, radio, radioValue, usb, usbValue, thinLine12,
             misc,
             colors, colorsValue, sar, sarValue, inTheBox, inTheBoxValue, variant, variantValue, modelID, modelIDValue, thinLine13,
-            thinLine14,review1,thinLine15,review2,thinLine16,review3,thinLine17,review4,thinLine18,review5,thinLine19;
+            thinLine14,review1,thinLine15,review2,thinLine16,review3,thinLine17,review4,thinLine18,review5,thinLine19,
+            ask_question_title,thinLine20,ask_question_inst,
+            question_answered,
+            rating,cameraRating, ratingGivenCamera,thinLine21, performanceRating,ratingGivenPerformance,thinLine22,batteryRating,ratingGivenBattery,
+            thinLine23,designRating,ratingGivenDesign,thinLine24,buildRating,ratingGivenBuild,thinLine25;
+
+    EditText input_question,input_name;
+    Button submit_question;
 
 
 
@@ -316,6 +329,107 @@ public class Oneplus extends AppCompatActivity {
         review5 = (TextView) findViewById(R.id.review5);
         thinLine19 = (TextView) findViewById(R.id.thinLine19);
 
+        ask_question_title=(TextView)findViewById(R.id.ask_question_title);
+        thinLine20=(TextView)findViewById(R.id.thinLine20);
+        ask_question_inst=(TextView)findViewById(R.id.ask_question_inst);
+        input_question=(EditText)findViewById(R.id.input_question);
+        input_name=(EditText)findViewById(R.id.input_name);
+        submit_question=(Button)findViewById(R.id.submit_question);
+
+        question_answered=(TextView)findViewById(R.id.question_answered);
+
+        rating=(TextView)findViewById(R.id.rating);
+        cameraRating=(TextView)findViewById(R.id.camera_rating);
+        ratingBarCamera=(RatingBar)findViewById(R.id.ratingBarCamera);
+        ratingGivenCamera=(TextView)findViewById(R.id.rating_given_camera);
+        thinLine21=(TextView)findViewById(R.id.thinLine21);
+        performanceRating=(TextView)findViewById(R.id.performance_rating);
+        ratingBarPerformance=(RatingBar)findViewById(R.id.ratingBarPerformance);
+        ratingGivenPerformance=(TextView)findViewById(R.id.rating_given_performance);
+        thinLine22=(TextView)findViewById(R.id.thinLine22);
+        batteryRating=(TextView)findViewById(R.id.battery_rating);
+        ratingBarBattery=(RatingBar)findViewById(R.id.ratingBarBattery);
+        ratingGivenBattery=(TextView)findViewById(R.id.rating_given_battery);
+        thinLine23=(TextView)findViewById(R.id.thinLine23);
+        designRating=(TextView)findViewById(R.id.design_rating);
+        ratingBarDesign=(RatingBar)findViewById(R.id.ratingBarDesign);
+        ratingGivenDesign=(TextView)findViewById(R.id.rating_given_design);
+        thinLine24=(TextView)findViewById(R.id.thinLine24);
+        buildRating=(TextView)findViewById(R.id.build_rating);
+        ratingBarBuild=(RatingBar)findViewById(R.id.ratingBarBuild);
+        ratingGivenBuild=(TextView)findViewById(R.id.rating_given_build);
+        thinLine25=(TextView)findViewById(R.id.thinLine25);
+
+        LayerDrawable stars1 = (LayerDrawable) ratingBarCamera.getProgressDrawable();
+        stars1.getDrawable(2).setColorFilter(Color.YELLOW, PorterDuff.Mode.SRC_ATOP);
+
+        LayerDrawable stars2 = (LayerDrawable) ratingBarPerformance.getProgressDrawable();
+        stars2.getDrawable(2).setColorFilter(Color.RED, PorterDuff.Mode.SRC_ATOP);
+
+        LayerDrawable stars3 = (LayerDrawable) ratingBarBattery.getProgressDrawable();
+        stars3.getDrawable(2).setColorFilter(Color.BLUE, PorterDuff.Mode.SRC_ATOP);
+
+        LayerDrawable stars4 = (LayerDrawable) ratingBarDesign.getProgressDrawable();
+        stars4.getDrawable(2).setColorFilter(Color.GREEN, PorterDuff.Mode.SRC_ATOP);
+
+        LayerDrawable stars5 = (LayerDrawable) ratingBarBuild.getProgressDrawable();
+        stars5.getDrawable(2).setColorFilter(Color.CYAN, PorterDuff.Mode.SRC_ATOP);
+
+        ratingBarCamera.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
+            @Override
+            public void onRatingChanged(RatingBar ratingBar, float rating, boolean fromUser) {
+                final int numStars = ratingBar.getNumStars();
+
+                ratingGivenCamera.setText(rating + "/" + numStars);
+            }
+        });
+
+        ratingBarCamera.setRating(2.0f);
+
+
+
+        ratingBarPerformance.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
+            @Override
+            public void onRatingChanged(RatingBar ratingBar, float rating, boolean fromUser) {
+                final int numStars = ratingBar.getNumStars();
+                ratingGivenPerformance.setText(rating + "/" + numStars);
+            }
+        });
+
+        ratingBarPerformance.setRating(2.0f);
+
+        ratingBarBattery.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
+            @Override
+            public void onRatingChanged(RatingBar ratingBar, float rating, boolean fromUser) {
+                final int numStars = ratingBar.getNumStars();
+                ratingGivenBattery.setText(rating + "/" + numStars);
+            }
+        });
+
+        ratingBarBattery.setRating(3.5f);
+
+        ratingBarDesign.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
+            @Override
+            public void onRatingChanged(RatingBar ratingBar, float rating, boolean fromUser) {
+                final int numStars = ratingBar.getNumStars();
+                ratingGivenDesign.setText(rating + "/" + numStars);
+            }
+        });
+
+        ratingBarDesign.setRating(5.0f);
+
+        ratingBarBuild.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
+            @Override
+            public void onRatingChanged(RatingBar ratingBar, float rating, boolean fromUser) {
+                final int numStars = ratingBar.getNumStars();
+                ratingGivenBuild.setText(rating + "/" + numStars);
+            }
+        });
+
+        ratingBarBuild.setRating(4.0f);
+
+
+
 
 
         modelSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
@@ -332,9 +446,14 @@ public class Oneplus extends AppCompatActivity {
                     networkModelImage.setVisibility(View.VISIBLE);
                     techSpecs.setVisibility(View.VISIBLE);
 
+                    ask_question_inst.setText("Having doubt? Ask anything regarding "+ modelSpinner.getSelectedItem().toString()+" below:");
+
 
 
                     reviewsTitle.setVisibility(View.VISIBLE);
+                    ask_question_title.setVisibility(View.VISIBLE);
+                    question_answered.setVisibility(View.VISIBLE);
+                    rating.setVisibility(View.VISIBLE);
                     getImage(imageLinkList.get(position).toString());
 
                     launchDateValue.setText(listLaunchDate.get(position).toString());
@@ -408,6 +527,9 @@ public class Oneplus extends AppCompatActivity {
 
 
                     reviewsTitle.setVisibility(View.GONE);
+                    ask_question_title.setVisibility(View.GONE);
+                    question_answered.setVisibility(View.GONE);
+                    rating.setVisibility(View.GONE);
                     networkModelImage.setVisibility(View.GONE);
                     //hv.setVisibility(View.GONE);
                     sv.setVisibility(View.GONE);
@@ -426,6 +548,8 @@ public class Oneplus extends AppCompatActivity {
             }
         });
 
+
+
         if (line1.getVisibility() == View.GONE) {
             techSpecs.setText("Technical Specification\t\t\u25BC");
         }
@@ -438,6 +562,27 @@ public class Oneplus extends AppCompatActivity {
         }
         else{
             reviewsTitle.setText("Top 5 Reviews\t\t\u25B2");
+        }
+
+        if (line1.getVisibility() == View.GONE) {
+            ask_question_title.setText("Ask Question\t\t\u25BC");
+        }
+        else{
+            ask_question_title.setText("Ask Question\t\t\u25B2");
+        }
+
+        if (line1.getVisibility() == View.GONE) {
+            question_answered.setText("Answered questions\t\t\u25BC");
+        }
+        else{
+            question_answered.setText("Answered questions\t\t\u25B2");
+        }
+
+        if (line1.getVisibility() == View.GONE) {
+            rating.setText("Rating\t\t\u25BC");
+        }
+        else{
+            rating.setText("Rating\t\t\u25B2");
         }
 
 
@@ -959,6 +1104,142 @@ public class Oneplus extends AppCompatActivity {
         }
 
     }
+
+    public void onClickAskQuestion(View v) {
+        if (ask_question_inst.getVisibility() == View.GONE) {
+            ask_question_inst.setText("Having doubt? Ask anything regarding "+ modelSpinner.getSelectedItem().toString()+" below:");
+            ask_question_title.setText("Ask Question\t\t\u25B2");
+            ask_question_inst.setVisibility(View.VISIBLE);
+            Fx.slide_down(this, ask_question_inst);
+            thinLine20.setVisibility(View.VISIBLE);
+            input_question.setVisibility(View.VISIBLE);
+            Fx.slide_down(this, input_question);
+            input_name.setVisibility(View.VISIBLE);
+            Fx.slide_down(this, input_name);
+            submit_question.setVisibility(View.VISIBLE);
+            Fx.slide_down(this, submit_question);
+
+
+        } else {
+            ask_question_title.setText("Ask Question\t\t\u25BC");
+            Fx.slide_up(this, ask_question_inst);
+            ask_question_inst.setVisibility(View.GONE);
+            Fx.slide_up(this, input_question);
+            input_question.setVisibility(View.GONE);
+            Fx.slide_up(this, input_name);
+            input_name.setVisibility(View.GONE);
+            Fx.slide_up(this, submit_question);
+            submit_question.setVisibility(View.GONE);
+            thinLine20.setVisibility(View.GONE);
+
+        }
+
+
+
+
+    }
+
+    public void onClickQuestionAnswered(View v){
+
+
+    }
+
+    public void onClickRating(View v){
+        if (cameraRating.getVisibility() == View.GONE) {
+            rating.setText("Rating\t\t\u25B2");
+            cameraRating.setVisibility(View.VISIBLE);
+            Fx.slide_down(this, cameraRating);
+            ratingBarCamera.setVisibility(View.VISIBLE);
+            Fx.slide_down(this, ratingBarCamera);
+            ratingGivenCamera.setVisibility(View.VISIBLE);
+            Fx.slide_down(this, ratingGivenCamera);
+
+            performanceRating.setVisibility(View.VISIBLE);
+            Fx.slide_down(this, performanceRating);
+            ratingBarPerformance.setVisibility(View.VISIBLE);
+            Fx.slide_down(this, ratingBarPerformance);
+            ratingGivenPerformance.setVisibility(View.VISIBLE);
+            Fx.slide_down(this, ratingGivenPerformance);
+
+            batteryRating.setVisibility(View.VISIBLE);
+            Fx.slide_down(this, batteryRating);
+            ratingBarBattery.setVisibility(View.VISIBLE);
+            Fx.slide_down(this, ratingBarBattery);
+            ratingGivenBattery.setVisibility(View.VISIBLE);
+            Fx.slide_down(this, ratingGivenBattery);
+
+            designRating.setVisibility(View.VISIBLE);
+            Fx.slide_down(this, designRating);
+            ratingBarDesign.setVisibility(View.VISIBLE);
+            Fx.slide_down(this, ratingBarDesign);
+            ratingGivenDesign.setVisibility(View.VISIBLE);
+            Fx.slide_down(this, ratingGivenDesign);
+
+            buildRating.setVisibility(View.VISIBLE);
+            Fx.slide_down(this, buildRating);
+            ratingBarBuild.setVisibility(View.VISIBLE);
+            Fx.slide_down(this, ratingBarBuild);
+            ratingGivenBuild.setVisibility(View.VISIBLE);
+            Fx.slide_down(this, ratingGivenBuild);
+
+            thinLine21.setVisibility(View.VISIBLE);
+            thinLine22.setVisibility(View.VISIBLE);
+            thinLine23.setVisibility(View.VISIBLE);
+            thinLine24.setVisibility(View.VISIBLE);
+            thinLine25.setVisibility(View.VISIBLE);
+        }
+
+        else{
+            rating.setText("Rating\t\t\u25BC");
+            Fx.slide_up(this, cameraRating);
+            cameraRating.setVisibility(View.GONE);
+            Fx.slide_up(this, ratingBarCamera);
+            ratingBarCamera.setVisibility(View.GONE);
+            Fx.slide_up(this, ratingGivenCamera);
+            ratingGivenCamera.setVisibility(View.GONE);
+
+            Fx.slide_up(this, performanceRating);
+            performanceRating.setVisibility(View.GONE);
+            Fx.slide_up(this, ratingBarPerformance);
+            ratingBarPerformance.setVisibility(View.GONE);
+            Fx.slide_up(this, ratingGivenPerformance);
+            ratingGivenPerformance.setVisibility(View.GONE);
+
+            Fx.slide_up(this, batteryRating);
+            batteryRating.setVisibility(View.GONE);
+            Fx.slide_up(this, ratingBarBattery);
+            ratingBarBattery.setVisibility(View.GONE);
+            Fx.slide_up(this, ratingGivenBattery);
+            ratingGivenBattery.setVisibility(View.GONE);
+
+            Fx.slide_up(this, designRating);
+            designRating.setVisibility(View.GONE);
+            Fx.slide_up(this, ratingBarDesign);
+            ratingBarDesign.setVisibility(View.GONE);
+            Fx.slide_up(this, ratingGivenDesign);
+            ratingGivenDesign.setVisibility(View.GONE);
+
+            Fx.slide_up(this, buildRating);
+            buildRating.setVisibility(View.GONE);
+            Fx.slide_up(this, ratingBarBuild);
+            ratingBarBuild.setVisibility(View.GONE);
+            Fx.slide_up(this, ratingGivenBuild);
+            ratingGivenBuild.setVisibility(View.GONE);
+
+            thinLine21.setVisibility(View.GONE);
+            thinLine22.setVisibility(View.GONE);
+            thinLine23.setVisibility(View.GONE);
+            thinLine24.setVisibility(View.GONE);
+            thinLine25.setVisibility(View.GONE);
+
+        }
+
+
+    }
+
+
+
+
 
 
     @Override
