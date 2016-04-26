@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.jamm.devicespecsandreviews">
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"></uses-permission>
+
+    <uses-permission android:name="android.permission.INTERNET"></uses-permission>
+
+    <application
+        android:name=".AppController"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".Apple"
+            android:label="@string/title_activity_apple"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.jamm.devicespecsandreviews.MainActivity" />
+        </activity>
+        <activity
+            android:name=".Samsung"
+            android:label="@string/title_activity_samsung"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.jamm.devicespecsandreviews.MainActivity" />
+        </activity>
+        <activity
+            android:name=".Motorola"
+            android:label="@string/title_activity_motorola"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.jamm.devicespecsandreviews.MainActivity" />
+        </activity>
+        <activity
+            android:name=".Lg"
+            android:label="@string/title_activity_lg"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.jamm.devicespecsandreviews.MainActivity" />
+        </activity>
+        <activity
+            android:name=".Sony"
+            android:label="@string/title_activity_sony"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.jamm.devicespecsandreviews.MainActivity" />
+        </activity>
+        <activity
+            android:name=".Lenovo"
+            android:label="@string/title_activity_lenovo"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.jamm.devicespecsandreviews.MainActivity" />
+        </activity>
+        <activity
+            android:name=".Oneplus"
+            android:label="@string/title_activity_oneplus"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.jamm.devicespecsandreviews.MainActivity" />
+        </activity>
+        <activity
+            android:name=".Mi"
+            android:label="@string/title_activity_mi"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.jamm.devicespecsandreviews.MainActivity" />
+        </activity>
+        <activity
+            android:name=".Nexus"
+            android:label="@string/title_activity_nexus"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.jamm.devicespecsandreviews.MainActivity" />
+        </activity>
+        <activity
+            android:name=".Htc"
+            android:label="@string/title_activity_htc"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.jamm.devicespecsandreviews.MainActivity" />
+        </activity>
+        <activity
+            android:name=".Asus"
+            android:label="@string/title_activity_asus"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.jamm.devicespecsandreviews.MainActivity" />
+        </activity>
+        <activity
+            android:name=".Huawei"
+            android:label="@string/title_activity_huawei"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.jamm.devicespecsandreviews.MainActivity" />
+        </activity>
+        <activity
+            android:name=".Oppo"
+            android:label="@string/title_activity_oppo"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.jamm.devicespecsandreviews.MainActivity" />
+        </activity>
+        <activity
+            android:name=".Lumia"
+            android:label="@string/title_activity_lumia"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.jamm.devicespecsandreviews.MainActivity" />
+        </activity>
+        <activity
+            android:name=".Micromax"
+            android:label="@string/title_activity_micromax"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.jamm.devicespecsandreviews.MainActivity" />
+        </activity>
+        <activity
+            android:name=".Yu"
+            android:label="@string/title_activity_yu"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.jamm.devicespecsandreviews.MainActivity" />
+        </activity>
+        <activity
+            android:name=".Gionee"
+            android:label="@string/title_activity_gionee"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.jamm.devicespecsandreviews.MainActivity" />
+        </activity>
+        <activity
+            android:name=".Panasonic"
+            android:label="@string/title_activity_panasonic"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.jamm.devicespecsandreviews.MainActivity" />
+        </activity>
+        <activity
+            android:name=".Karbonn"
+            android:label="@string/title_activity_karbonn"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.jamm.devicespecsandreviews.MainActivity" />
+        </activity>
+        <activity
+            android:name=".Lava"
+            android:label="@string/title_activity_lava"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.jamm.devicespecsandreviews.MainActivity" />
+        </activity>
+    </application>
+
+</manifest>
