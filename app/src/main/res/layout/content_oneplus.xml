@@ -1007,6 +1007,300 @@
                         style="@style/thinLines.reviews"
                         android:layout_below="@+id/review5" />
 
+                    <TextView
+                        android:id="@+id/ask_question_title"
+                        style="@style/title"
+                        android:layout_below="@+id/thinLine19"
+                        android:background="#1414a7"
+                        android:onClick="onClickAskQuestion"
+                        android:text="@string/ask_question" />
+
+
+                    <TextView
+                        android:id="@+id/ask_question_inst"
+                        style="@style/reviewsStyle"
+                        android:text="@string/ask_inst"
+                        android:layout_below="@+id/ask_question_title"/>
+
+                    <TextView
+                        android:id="@+id/thinLine20"
+                        style="@style/thinLines.reviews"
+                        android:layout_below="@+id/ask_question_inst" />
+
+
+                    <EditText
+                        android:id="@+id/input_question"
+                        android:layout_margin="10dp"
+                        android:visibility="gone"
+                        android:hint="Enter your question..."
+                        android:background="@android:color/white"
+                        android:layout_below="@+id/thinLine20"
+                        android:layout_width="match_parent"
+                        android:gravity="left"
+                        android:layout_height="100dp" />
+
+                    <EditText
+                        android:id="@+id/input_name"
+                        android:layout_margin="10dp"
+                        android:visibility="gone"
+                        android:hint="Enter your name"
+                        android:background="@android:color/white"
+                        android:layout_below="@+id/input_question"
+                        android:layout_width="match_parent"
+                        android:gravity="left"
+                        android:layout_height="wrap_content" />
+
+                    <Button
+                        android:id="@+id/submit_question"
+                        android:layout_margin="5dp"
+                        android:text="Submit"
+                        android:visibility="gone"
+                        android:layout_centerHorizontal="true"
+                        android:layout_below="@+id/input_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:id="@+id/question_answered"
+                        style="@style/title"
+                        android:layout_below="@+id/submit_question"
+                        android:background="#918213"
+                        android:onClick="onClickQuestionAnswered"
+                        android:text="@string/answered_questions" />
+
+                    <TextView
+                        android:id="@+id/rating"
+                        style="@style/title"
+                        android:layout_below="@+id/question_answered"
+                        android:background="#911322"
+                        android:onClick="onClickRating"
+                        android:text="Rating" />
+
+
+                    <TextView
+                        android:id="@+id/camera_rating"
+                        android:text="Camera"
+                        android:visibility="gone"
+                        android:layout_marginTop="10dp"
+                        android:textSize="18sp"
+                        android:layout_centerHorizontal="true"
+                        android:textColor="@android:color/black"
+                        android:layout_below="@+id/rating"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                    <RatingBar
+                        android:id="@+id/ratingBarCamera"
+                        android:layout_below="@+id/camera_rating"
+                        android:isIndicator="true"
+                        android:visibility="gone"
+                        android:numStars="5"
+                        android:stepSize="0.5"
+                        android:layout_width="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp" />
+
+
+                    <TextView
+                        android:id="@+id/rating_given_camera"
+                        android:layout_marginTop="10dp"
+                        android:visibility="gone"
+                        android:layout_width="wrap_content"
+                        android:textColor="@android:color/black"
+                        android:textSize="16sp"
+                        android:layout_height="wrap_content"
+                        android:layout_toRightOf="@+id/ratingBarCamera"
+                        android:layout_below="@+id/camera_rating" />
+
+                    <TextView
+                        android:id="@+id/thinLine21"
+                        style="@style/thinLines.reviews"
+                        android:layout_below="@+id/ratingBarCamera" />
+
+
+                    <TextView
+                        android:id="@+id/performance_rating"
+                        android:text="Performance"
+                        android:visibility="gone"
+                        android:layout_marginTop="10dp"
+                        android:textSize="18sp"
+                        android:layout_centerHorizontal="true"
+                        android:textColor="@android:color/black"
+                        android:layout_below="@+id/thinLine21"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                    <RatingBar
+                        android:id="@+id/ratingBarPerformance"
+                        android:layout_below="@+id/performance_rating"
+                        android:isIndicator="true"
+                        android:numStars="5"
+                        android:visibility="gone"
+                        android:stepSize="0.5"
+                        android:layout_width="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp" />
+
+
+                    <TextView
+                        android:id="@+id/rating_given_performance"
+                        android:layout_marginTop="10dp"
+                        android:layout_width="wrap_content"
+                        android:textColor="@android:color/black"
+                        android:textSize="16sp"
+                        android:visibility="gone"
+                        android:layout_height="wrap_content"
+                        android:layout_toRightOf="@+id/ratingBarPerformance"
+                        android:layout_below="@+id/performance_rating" />
+
+                    <TextView
+                        android:id="@+id/thinLine22"
+                        style="@style/thinLines.reviews"
+                        android:layout_below="@+id/ratingBarPerformance" />
+
+
+                    <TextView
+                        android:id="@+id/design_rating"
+                        android:text="Design"
+                        android:layout_marginTop="10dp"
+                        android:textSize="18sp"
+                        android:visibility="gone"
+                        android:layout_centerHorizontal="true"
+                        android:textColor="@android:color/black"
+                        android:layout_below="@+id/thinLine22"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                    <RatingBar
+                        android:id="@+id/ratingBarDesign"
+                        android:layout_below="@+id/design_rating"
+                        android:isIndicator="true"
+                        android:numStars="5"
+                        android:visibility="gone"
+                        android:stepSize="0.5"
+                        android:layout_width="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp" />
+
+
+                    <TextView
+                        android:id="@+id/rating_given_design"
+                        android:layout_marginTop="10dp"
+                        android:layout_width="wrap_content"
+                        android:textColor="@android:color/black"
+                        android:textSize="16sp"
+                        android:visibility="gone"
+                        android:layout_height="wrap_content"
+                        android:layout_toRightOf="@+id/ratingBarDesign"
+                        android:layout_below="@+id/design_rating" />
+
+                    <TextView
+                        android:id="@+id/thinLine23"
+                        style="@style/thinLines.reviews"
+                        android:layout_below="@+id/ratingBarDesign" />
+
+
+                    <TextView
+                        android:id="@+id/battery_rating"
+                        android:text="Battery"
+                        android:visibility="gone"
+                        android:layout_marginTop="10dp"
+                        android:textSize="18sp"
+                        android:layout_centerHorizontal="true"
+                        android:textColor="@android:color/black"
+                        android:layout_below="@+id/thinLine23"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                    <RatingBar
+                        android:id="@+id/ratingBarBattery"
+                        android:layout_below="@+id/battery_rating"
+                        android:isIndicator="true"
+                        android:numStars="5"
+                        android:visibility="gone"
+                        android:stepSize="0.5"
+                        android:layout_width="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp" />
+
+
+                    <TextView
+                        android:id="@+id/rating_given_battery"
+                        android:layout_marginTop="10dp"
+                        android:layout_width="wrap_content"
+                        android:textColor="@android:color/black"
+                        android:textSize="16sp"
+                        android:visibility="gone"
+                        android:layout_height="wrap_content"
+                        android:layout_toRightOf="@+id/ratingBarBattery"
+                        android:layout_below="@+id/battery_rating" />
+
+                    <TextView
+                        android:id="@+id/thinLine24"
+                        style="@style/thinLines.reviews"
+                        android:layout_below="@+id/ratingBarBattery" />
+
+                    <TextView
+                        android:id="@+id/build_rating"
+                        android:text="Build Quality"
+                        android:layout_marginTop="10dp"
+                        android:textSize="18sp"
+                        android:visibility="gone"
+                        android:layout_centerHorizontal="true"
+                        android:textColor="@android:color/black"
+                        android:layout_below="@+id/thinLine24"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                    <RatingBar
+                        android:id="@+id/ratingBarBuild"
+                        android:layout_below="@+id/build_rating"
+                        android:isIndicator="true"
+                        android:numStars="5"
+                        android:visibility="gone"
+                        android:stepSize="0.5"
+                        android:layout_width="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp" />
+
+
+                    <TextView
+                        android:id="@+id/rating_given_build"
+                        android:layout_marginTop="10dp"
+                        android:layout_width="wrap_content"
+                        android:textColor="@android:color/black"
+                        android:textSize="16sp"
+                        android:visibility="gone"
+                        android:layout_height="wrap_content"
+                        android:layout_toRightOf="@+id/ratingBarBuild"
+                        android:layout_below="@+id/build_rating" />
+
+                    <TextView
+                        android:id="@+id/thinLine25"
+                        style="@style/thinLines.reviews"
+                        android:layout_below="@+id/ratingBarBuild" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
                 </RelativeLayout>
 
